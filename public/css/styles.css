@@ -9,8 +9,11 @@ body {
     background-position: center;
 }
 
+.paulsTableRow  {
+  height: 10px;
+}
 .paulsTable {
-  width: 100%;
+  width: 50%;
   text-align: center;
   /*background-size: 60%;*/
   background-color: #ffffff;
@@ -19,6 +22,7 @@ body {
   padding: 0px;
   opacity: .9;
   font-weight: bold;
+  color: #000000;
 
 }
 .widerColumn {

@@ -31,14 +31,15 @@ var pool = new pg.Pool(config);
 });
 
 router.put('/update/gigs', function(req, res) {
+  var newGigInfo = req.body;
   console.log('hit my put - edit- gigs route');
   pool.connect(function(err, client, done) {
     if(err){
       console.log(err);
       res.sendStatus(500);
     }else{
-      client.query('UPDATE gigs SET status=TRUE WHERE ID=$1;',
-        [cellToUpdateId], function(err, result) {
+      client.query('UPDATE gigs SET gig = $1, address = $2, website = $3, trumpet = $4 WHERE id=$5;',
+        [newGigInfo.gig, newGigInfo.address, newGigInfo.website, newGigInfo.trumpet, newGigInfo.id], function(err, result) {
           done();
           if(err){
             console.log(err);
@@ -47,6 +48,7 @@ router.put('/update/gigs', function(req, res) {
             res.sendStatus(200);
           }
       });
+      console.log('hit put query');
     }
   });
 });

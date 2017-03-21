@@ -2,8 +2,16 @@
   <nav ng-include="'views/templates/nav.html'"></nav>
   <!-- <h2>This is the blank calendar.html file</h2>
   {{calendar.testMessage}} -->
-<div class="table-responsive paulsTable vertical-center">
-  <table class="table table-bordered table-hover table-condensed">
+<div class="container paulsContainer">
+  <!-- <table st-table="calendar.gigsList.list"> -->
+  <table class="table table-bordered table-hover table-responsive paulsTable">
+
+<!-- table-responsive table-condensed  vertical-center -->
+    <!-- <table st-table="displayedCollection" st-safe-src="rowCollection"> -->
+
+    <!-- http://lorenzofox3.github.io/smart-table-website/ -->
+    <!-- class="table-responsive paulsTable vertical-center table table-bordered table-hover table-condensed" -->
+    <!-- class="table table-striped" -->
             <thead>
                 <tr>
                     <th class="widerColumn">Gig</th>
@@ -28,28 +36,33 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="cal in calendar.gigsList.list">
-                    <td><span editable-text="cal.gig"</span>{{cal.gig}}</td>
-                    <!-- <td><span editable-text="cal.gig" onaftersave="calendar.whatevermyfunctionis(passin cal - entire object)">{{cal.gig || "empty"}}</span></td> -->
-                    <td><span editable-text="cal.address"</span>{{cal.address}}</td>
-                    <td><span editable-text="cal.website"</span><a href="#!cal.website">{{cal.website}}</a></td>
-                    <td><span editable-text="cal.date"</span>{{cal.date | date:'MM/dd/yyyy'}}</td>
-                    <td><span editable-text="cal.soundcheck"</span>{{cal.soundcheck}}</td>
-                    <td><span editable-text="cal.start_end"</span>{{cal.start_end}}</td>
-                    <td><span editable-text="cal.pay"</span>{{cal.pay}}</td>
-                    <td><span editable-text="cal.guitar"</span>{{cal.guitar}}</td>
-                    <td><span editable-text="cal.trumpet"</span>{{cal.trumpet}}</td>
-                    <td><span editable-text="cal.trombone"</span>{{cal.trombone}}</td>
-                    <td><span editable-text="cal.sax"</span>{{cal.sax}}</td>
-                    <td><span editable-text="cal.keys"</span>{{cal.keys}}</td>
-                    <td><span editable-text="cal.bass"</span>{{cal.bass}}</td>
-                    <td><span editable-text="cal.female_vocals"</span>{{cal.female_vocals}}</td>
-                    <td><span editable-text="cal.drums"</span>{{cal.drums}}</td>
-                    <td><span editable-text="cal.male_vocals"</span>{{cal.male_vocals}}</td>
-                    <td><span editable-text="cal.prod_person"</span>{{cal.prod_person}}</td>
-                    <td><span editable-text="cal.prod_cost"</span>{{cal.prod_cost}}</td>
-                    <td><span editable-text="cal.prod_size"</span>{{cal.prod_size}}</td>
-                    <td><span editable-text="cal.soundcheck"</span>{{cal.soundcheck}}</td>
+                <tr class="paulsTableRow" ng-repeat="cal in calendar.gigsList.list">
+
+                    <!-- <td><span editable-text="cal.gig"</span>{{cal.gig}}</td> -->
+
+                    <td><span editable-text="cal.gig" onaftersave="calendar.updateGigs(cal)">{{cal.gig || "empty"}}</span></td>
+
+                    <td><a ng-href="http://maps.google.com/?q={{cal.address}}">map</a></td>
+
+
+                    <td><a ng-href="{{cal.website}}">website</a></td>
+                    <td><span>{{cal.date | date:'MM/dd/yyyy'}}</span></td>
+                    <td><span editable-text="cal.soundcheck" onaftersave="calendar.updateGigs(cal)">{{cal.soundcheck}}</span></td>
+                    <td><span editable-text="cal.start_end" onaftersave="calendar.updateGigs(cal)"> {{cal.start_end}}</span></td>
+                    <td><span >{{cal.pay}}</span></td>
+
+                    <td><span editable-text="cal.guitar" onaftersave="calendar.updateGigs(cal)">{{cal.guitar || "empty"}}</span></td>
+                    <td><span editable-text="cal.trumpet" onaftersave="calendar.updateGigs(cal)">{{cal.trumpet || "empty"}}</span></td>
+                    <td><span editable-text="cal.trombone"onaftersave="calendar.updateGigs(cal)">{{cal.trombone || "empty"}}</span></td>
+                    <td><span editable-text="cal.sax"onaftersave="calendar.updateGigs(cal)">{{cal.sax || "empty"}}</span></td>
+                    <td><span editable-text="cal.keys"onaftersave="calendar.updateGigs(cal)">{{cal.keys || "empty"}}</span></td>
+                    <td><span editable-text="cal.bass"onaftersave="calendar.updateGigs(cal)">{{cal.bass || "empty"}}</span></td>
+                    <td><span editable-text="cal.female_vocals"onaftersave="calendar.updateGigs(cal)">{{cal.female_vocals || "empty"}}</span></td>
+                    <td><span editable-text="cal.drums"onaftersave="calendar.updateGigs(cal)">{{cal.drums || "empty"}}</span></td>
+                    <td><span editable-text="cal.male_vocals"onaftersave="calendar.updateGigs(cal)">{{cal.male_vocals || "empty"}}</span></td>
+                    <td><span editable-text="cal.prod_person"onaftersave="calendar.updateGigs(cal)">{{cal.prod_person || "empty"}}</span></td>
+                    <td><span editable-text="cal.prod_cost"onaftersave="calendar.updateGigs(cal)">{{cal.prod_cost || "empty"}}</span></td>
+                    <td><span editable-text="cal.prod_size"onaftersave="calendar.updateGigs(cal)">{{cal.prod_size || "empty"}}</span></td>
                 </tr>
             </tbody>
 

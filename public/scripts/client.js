@@ -1,9 +1,10 @@
 var myApp = angular.module('myApp', ['ngRoute', 'xeditable', 'firebase']);
 myApp.config(['$routeProvider', function($routeProvider) {
 
+// var myApp = angular.module('myApp', ['ngRoute', 'xeditable', 'firebase', 'smart-table']);
+// myApp.config(['$routeProvider', function($routeProvider) {
 
 
-// var app = angular.module("sampleApp", ["firebase"]);
 
 
 

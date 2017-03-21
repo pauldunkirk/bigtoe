@@ -6,6 +6,9 @@ myApp.factory('DataFactory', ['$http', '$firebaseAuth', '$location', function($h
     };
 
     function updateGigs(newGigInfo) {
+      console.log('update gigs without auth');
+      console.log(newGigInfo.id);
+      firebase.auth().currentUser.getToken().then(function(idToken){
         $http({
             method: 'PUT',
             url: '/routes/update/gigs',
@@ -14,8 +17,12 @@ myApp.factory('DataFactory', ['$http', '$firebaseAuth', '$location', function($h
             console.log('response from factory: ', response);
             console.log('response.data from factory: ', response.data);
             factoryGigs.list = response.data;
-            getGigs();
+            getGigs(idToken);
         });
+        console.log('update gigs was hit');
+      }).catch(function(error){
+        console.log('error authenticating', error);
+      });
     }
 
 
@@ -27,18 +34,7 @@ myApp.factory('DataFactory', ['$http', '$firebaseAuth', '$location', function($h
         if (firebaseUser) {
             // This is where we make our call to our server
             firebaseUser.getToken().then(function(idToken) {
-                $http({
-                    method: 'GET',
-                    url: '/routes/get/gigs',
-                    headers: {
-                        id_token: idToken
-                    }
-                }).then(function(response) {
-                    console.log('response from factory: ', response);
-                    console.log('response.data from factory: ', response.data);
-                    factoryGigs.list = response.data;
-                    goToCal();
-                });
+                getGigs(idToken);
             });
         } else {
             console.log('Not logged in or not authorized.');
@@ -46,7 +42,20 @@ myApp.factory('DataFactory', ['$http', '$firebaseAuth', '$location', function($h
             // self.secretData = "Log in to get some secret data.";
         }
     });
-
+function getGigs(idToken){
+    $http({
+        method: 'GET',
+        url: '/routes/get/gigs',
+        headers: {
+            id_token: idToken
+        }
+    }).then(function(response) {
+        console.log('response from factory: ', response);
+        console.log('response.data from factory: ', response.data);
+        factoryGigs.list = response.data;
+        goToCal();
+    });
+}
     // getGigs();
     // function getGigs() {
     //     $http({
@@ -69,6 +78,7 @@ myApp.factory('DataFactory', ['$http', '$firebaseAuth', '$location', function($h
     }
 
     return {
-        allGigs: factoryGigs
+        allGigs: factoryGigs,
+        updateGigs: updateGigs
     };
 }]);
