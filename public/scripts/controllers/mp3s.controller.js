@@ -1,4 +1,4 @@
-myApp.controller('mp3sController',['DataFactory',function(DataFactory) {
+myApp.controller('mp3sController',['CalendarFactory',function(CalendarFactory) {
 
   console.log('mp3s controller running');
   var self = this;

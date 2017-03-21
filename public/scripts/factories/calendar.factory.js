@@ -1,4 +1,4 @@
-myApp.factory('DataFactory', ['$http', '$firebaseAuth', '$location', function($http, $firebaseAuth, $location) {
+myApp.factory('CalendarFactory', ['$http', '$firebaseAuth', '$location', function($http, $firebaseAuth, $location) {
     console.log('Data Factory running');
 
     var factoryGigs = {
@@ -39,6 +39,7 @@ myApp.factory('DataFactory', ['$http', '$firebaseAuth', '$location', function($h
         } else {
             console.log('Not logged in or not authorized.');
             goToLogin();
+            factoryGigs.list = [];
             // self.secretData = "Log in to get some secret data.";
         }
     });

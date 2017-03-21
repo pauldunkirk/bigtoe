@@ -1,4 +1,4 @@
-myApp.controller('ChartsController',['DataFactory',function(DataFactory) {
+myApp.controller('ChartsController',['CalendarFactory',function(CalendarFactory) {
 
 console.log('Charts controller running');
 

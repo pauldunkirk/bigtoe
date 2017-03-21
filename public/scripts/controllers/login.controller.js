@@ -1,4 +1,4 @@
-  myApp.controller('LoginController',['$firebaseAuth', 'DataFactory','$location', function($firebaseAuth, DataFactory, $location) {
+  myApp.controller('LoginController',['$firebaseAuth', 'CalendarFactory','$location', function($firebaseAuth, CalendarFactory, $location) {
   console.log('login controller running');
   var self = this;
   self.testMessage = 'This is the login controller test message';

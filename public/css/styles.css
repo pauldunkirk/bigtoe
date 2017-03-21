@@ -9,6 +9,13 @@ body {
     background-position: center;
 }
 
+
+.paulsContainer {
+  width: 70%;
+  background-position: center;
+  text-align: center;
+}
+
 .paulsTableRow  {
   height: 10px;
 }

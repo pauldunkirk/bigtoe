@@ -1,4 +1,4 @@
-myApp.controller('SetlistsController',['DataFactory',function(DataFactory) {
+myApp.controller('SetlistsController',['CalendarFactory',function(CalendarFactory) {
 
 console.log('Setlists controller running');
 
