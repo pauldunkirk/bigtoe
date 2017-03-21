@@ -1,0 +1,57 @@
+
+  <nav ng-include="'views/templates/nav.html'"></nav>
+  <!-- <h2>This is the blank calendar.html file</h2>
+  {{calendar.testMessage}} -->
+<div class="table-responsive paulsTable vertical-center">
+  <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th class="widerColumn">Gig</th>
+                    <th class="widerColumn">Address</th>
+                    <th class="narrowerColumn">Website</th>
+                    <th>Date</th>
+                    <th>Soundcheck</th>
+                    <th>Start/End</th>
+                    <th>Pay</th>
+                    <th>Guitar</th>
+                    <th>Trumpet</th>
+                    <th>Trombone</th>
+                    <th>Sax</th>
+                    <th>Keys</th>
+                    <th>Bass</th>
+                    <th>FemaleVocals</th>
+                    <th>Drums</th>
+                    <th>MaleVocals</th>
+                    <th>ProdPerson</th>
+                    <th>ProdCost</th>
+                    <th>ProdSize</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cal in calendar.gigsList.list">
+                    <td><span editable-text="cal.gig"</span>{{cal.gig}}</td>
+                    <!-- <td><span editable-text="cal.gig" onaftersave="calendar.whatevermyfunctionis(passin cal - entire object)">{{cal.gig || "empty"}}</span></td> -->
+                    <td><span editable-text="cal.address"</span>{{cal.address}}</td>
+                    <td><span editable-text="cal.website"</span><a href="#!cal.website">{{cal.website}}</a></td>
+                    <td><span editable-text="cal.date"</span>{{cal.date | date:'MM/dd/yyyy'}}</td>
+                    <td><span editable-text="cal.soundcheck"</span>{{cal.soundcheck}}</td>
+                    <td><span editable-text="cal.start_end"</span>{{cal.start_end}}</td>
+                    <td><span editable-text="cal.pay"</span>{{cal.pay}}</td>
+                    <td><span editable-text="cal.guitar"</span>{{cal.guitar}}</td>
+                    <td><span editable-text="cal.trumpet"</span>{{cal.trumpet}}</td>
+                    <td><span editable-text="cal.trombone"</span>{{cal.trombone}}</td>
+                    <td><span editable-text="cal.sax"</span>{{cal.sax}}</td>
+                    <td><span editable-text="cal.keys"</span>{{cal.keys}}</td>
+                    <td><span editable-text="cal.bass"</span>{{cal.bass}}</td>
+                    <td><span editable-text="cal.female_vocals"</span>{{cal.female_vocals}}</td>
+                    <td><span editable-text="cal.drums"</span>{{cal.drums}}</td>
+                    <td><span editable-text="cal.male_vocals"</span>{{cal.male_vocals}}</td>
+                    <td><span editable-text="cal.prod_person"</span>{{cal.prod_person}}</td>
+                    <td><span editable-text="cal.prod_cost"</span>{{cal.prod_cost}}</td>
+                    <td><span editable-text="cal.prod_size"</span>{{cal.prod_size}}</td>
+                    <td><span editable-text="cal.soundcheck"</span>{{cal.soundcheck}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+</div>
