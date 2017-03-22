@@ -1,4 +1,31 @@
 
-  <nav ng-include="'views/templates/nav.html'"></nav>
-  <h2>This is the blank mp3s.html file</h2>
-  {{mp3s.testMessage}}
+
+
+
+<div id="mp3sdiv">
+<!-- <img src="../css/jukebox.jpg" alt="JukeBox" style="width:304px; height:228px;"> -->
+
+
+<!-- style="background: url(JukeBox_114_.gif) no-repeat;
+      background-attachment: fixed;
+      background-size: 500%;
+      text-align: center;
+      background-position: center;" -->
+
+<nav ng-include="'views/templates/nav.html'"></nav>
+
+
+<div class="container">
+    <!-- paulsContainer -->
+    <table class="table paulsTable mp3sTable">
+        <!-- table-bordered table-hover table-responsive paulsTable -->
+            <tbody>
+                <tr ng-repeat="m in mp3s.mp3sList.list">
+                    <td>{{m.name}}</td>
+                    <td><audio controls preload="none" src="{{m.url}}" type="audio/mpeg" class="audio-player"></audio></td>
+                </tr>
+            </tbody>
+
+    </table>
+    </div>
+</div>

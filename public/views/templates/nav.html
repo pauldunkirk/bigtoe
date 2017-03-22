@@ -1,12 +1,17 @@
 <!--the hashbang stuff goes here-->
 
-<nav ng-controller="LoginController as login" class="topnav" id="myTopnav">
+<nav ng-controller="LoginController as login" class="topnav">
+    <!-- id="myTopnav" -->
 
+    <div class="container">
 
-<button type="button" class="btn btn-default navbar-btn"><a href="#!calendar">Calendar</a></button>
-<button type="button" class="btn btn-default navbar-btn"><a href="#!mp3s">MP3s</a></button>
-<button type="button" class="btn btn-default navbar-btn"><a href="#!charts">Charts</a></button>
-<button type="button" class="btn btn-default navbar-btn"><a href="#!contacts">Contact</a></button>
-<button type="button" class="btn btn-default navbar-btn"><a href="#!setlists">Setlists</a></button>
-<button ng-click="login.logOut()">Log Out</button>
+        <button type="button" class="btn btn-default navbar-btn"><a href="#!gigs">Gigs</a></button>
+        <button type="button" class="btn btn-default navbar-btn"><a href="#!mp3s">MP3s</a></button>
+        <button type="button" class="btn btn-default navbar-btn"><a href="#!charts">Charts</a></button>
+        <button type="button" class="btn btn-default navbar-btn"><a href="#!contacts">Contact</a></button>
+        <button type="button" class="btn btn-default navbar-btn"><a href="#!setlists">Setlists</a></button>
+        <button ng-click="login.logOut()">Log Out</button>
+
+    </div>
+
 </nav>

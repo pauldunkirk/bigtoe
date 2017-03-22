@@ -1,14 +1,18 @@
 body {
-    /*font-family:  "Open Sans", "Arial", "Verdana", sans-serif;*/
-    /*background:  #000000 url(BigToeNewLogo.png) right top no-repeat;*/
     background:  #000000 url(BTJ_2015_01.svg) no-repeat;
     background-attachment: fixed;
     background-size: 60%;
-    /*width: 90%;*/
     text-align: center;
     background-position: center;
 }
 
+#mp3sdiv {
+  background: url(jukebox.jpg) !important;
+  background-attachment: fixed !important;
+  background-size: 100vw !important;
+  text-align: center !important;
+  width: 100vw !important;
+}
 
 .paulsContainer {
   width: 70%;
@@ -16,120 +20,36 @@ body {
   text-align: center;
 }
 
-.paulsTableRow  {
-  height: 10px;
-}
 .paulsTable {
-  width: 50%;
-  text-align: center;
-  /*background-size: 60%;*/
-  background-color: #ffffff;
-  background-position: center;
-  font-size: 10px;
+  background-color: #F8F8F8;
   padding: 0px;
-  opacity: .9;
   font-weight: bold;
   color: #000000;
-
 }
-.widerColumn {
-  width: 500px;
-  padding: 0px;
 
+.gigsTable {
+  font-size: 10px;
+    opacity: .9;
 }
-.narrowerColumn {
+
+.mp3sTable{
+  font-size: 14px;
+    opacity: .8;
+}
+
+.table-bordered>tbody>tr>td:nth-child(1), .table-bordered>thead>tr>th:nth-child(1) {
   width: 100px;
-  padding: 0px;
-}
-
-.welcome{
-  background-color: #ffffff;
-/*background-position: center;
-  width: 200px;
-  text-align: center;*/
-}
-/*.loginButton{
-  padding: 18px 28px;
-  font-size: 22px; //change this to your desired size
-      line-height: normal;
-      -webkit-border-radius: 8px;
-         -moz-border-radius: 8px;
-              border-radius: 8px;
-  }*/
-
-
-}
-.vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
-
-  display: flex;
-  align-items: center;
-}
-
-/*.vertical-center {
-  /*min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  /*min-height: 50vh;*/
-
-  /*display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}*/
-
-.center_div{
-    /*margin: 0 auto;*/
-    /*width: 300%;*/
+  background-color: yellow;
+  font-size: 12px;
 }
 
 .loginContainer {
-   /*color: #ffffff;
-   border: 5px;
-   width: 60%;
-  padding: 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  /*box-sizing: border-box;*/
-  /*text-align: center;
-  background: #000000;
-  background-attachment: fixed;
-  background-size: 60%;
-  width: 80%;
-  opacity: .9;*/
-
-  /*;
-
-
-  border: 20px solid #f2f2f2;
-  margin: -5px;
-  border-radius: 50px;
-  transform: scale(.5);
-  text-align: center;
-  font-size: 20px;*/
   padding: 120px;
   opacity: .9;
   width: 100%;
   color: black;
-  /*margin: 50px;*/
-  /*background-color: #ffffff;*/
-
-  /*background-size: 60%;
-  width: 80%;
-  text-align: center;*/
   background-position: center;
 }
-/*
-.header {
-  color: black;
+.welcome{
   background-color: #ffffff;
-  padding: 20px;
-  border: 20px solid #f2f2f2;
-  margin: -5px;
-  border-radius: 50px;
-  transform: scale(.5);
-  text-align: center;
-  font-size: 20px;
-  opacity: .8;
-  width: 80%;
-}*/
+}

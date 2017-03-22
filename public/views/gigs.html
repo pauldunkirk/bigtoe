@@ -1,0 +1,67 @@
+<div class="">
+    <nav ng-include="'views/templates/nav.html'"></nav>
+</div>
+<!-- <h2>This is the blank gigs.html file</h2>
+  {{gigs.testMessage}} -->
+<div class="container ">
+    <!-- paulsContainer -->
+    <!-- <table st-table="gigs.gigsList.list"> -->
+    <table class="table table-bordered table-hover paulsTable gigsTable">
+        <!-- table-responsive -->
+        <!-- col-md-12  -->
+        <!-- table-responsive table-condensed  vertical-center -->
+        <!-- <table st-table="displayedCollection" st-safe-src="rowCollection"> -->
+
+        <!-- http://lorenzofox3.github.io/smart-table-website/ -->
+        <!-- class="table-responsive paulsTable vertical-center table table-bordered table-hover table-condensed" -->
+        <!-- class="table table-striped" -->
+        <thead>
+            <tr>
+                <th class="setWidth">Gig</th>
+                <th>Address</th>
+                <th>Website</th>
+                <th>Date</th>
+                <th>SCheck</th>
+                <th>GigTime</th>
+                <th>Pay</th>
+                <th>Guitar</th>
+                <th>Trumpt</th>
+                <th>Bone</th>
+                <th>Sax</th>
+                <th>Keys</th>
+                <th>Bass</th>
+                <th>FVocals</th>
+                <th>Drums</th>
+                <th>MVocals</th>
+                <th>Prod</th>
+                <th>PCost</th>
+                <th>PSize</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="paulsTableRow" ng-repeat="g in gigs.gigsList.list">
+                <td editable-text="g.gig" onaftersave="gigs.updateGigs(g)">{{g.gig || "empty"}}</td>
+                <td><a ng-href="http://maps.google.com/?q={{g.address}}" target="_blank">map</a></td>
+                <td><a ng-href="{{g.website}}" target="_blank">website</a></td>
+                <td>{{g.date | date:'MM/dd/yyyy'}}</td>
+                <td editable-text="g.soundcheck" onaftersave="gigs.updateGigs(g)">{{g.soundcheck}}</td>
+                <td editable-text="g.start_end" onaftersave="gigs.updateGigs(g)">{{g.start_end}}</td>
+                <td><span>{{g.pay || "empty"}}</span></td>
+                <!-- eventually put below in separate container or table? or have them in an ng-if -->
+                <td editable-text="g.guitar" onaftersave="gigs.updateGigs(g)">{{g.guitar || "empty"}}</td>
+                <td editable-text="g.trumpet" onaftersave="gigs.updateGigs(g)">{{g.trumpet || "empty"}}</td>
+                <td editable-text="g.trombone" onaftersave="gigs.updateGigs(g)">{{g.trombone || "empty"}}</td>
+                <td editable-text="g.sax" onaftersave="gigs.updateGigs(g)">{{g.sax || "empty"}}</td>
+                <td editable-text="g.keys" onaftersave="gigs.updateGigs(g)">{{g.keys || "empty"}}</td>
+                <td editable-text="g.bass" onaftersave="gigs.updateGigs(g)">{{g.bass || "empty"}}</td>
+                <td editable-text="g.female_vocals" onaftersave="gigs.updateGigs(g)">{{g.female_vocals || "empty"}}</td>
+                <td editable-text="g.drums" onaftersave="gigs.updateGigs(g)">{{g.drums || "empty"}}</td>
+                <td editable-text="g.male_vocals" onaftersave="gigs.updateGigs(g)">{{g.male_vocals || "empty"}}</td>
+                <td editable-text="g.prod_person" onaftersave="gigs.updateGigs(g)">{{g.prod_person || "empty"}}</td>
+                <td>{{g.prod_cost || "empty"}}</td>
+                <td><span editable-text="g.prod_size" onaftersave="gigs.updateGigs(g)">{{g.prod_size || "empty"}}</span></td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

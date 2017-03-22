@@ -2,17 +2,10 @@ var myApp = angular.module('myApp', ['ngRoute', 'xeditable', 'firebase']);
 myApp.config(['$routeProvider', function($routeProvider) {
 
 // var myApp = angular.module('myApp', ['ngRoute', 'xeditable', 'firebase', 'smart-table']);
-// myApp.config(['$routeProvider', function($routeProvider) {
-
-
-
-
 
 myApp.run(function(editableOptions) {
      editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
   });
-
-
 
     $routeProvider
         .when ('/login', {
@@ -20,10 +13,10 @@ myApp.run(function(editableOptions) {
           controller: 'LoginController',
           controllerAs: 'login'
         })
-        .when ('/calendar', {
-            templateUrl: '/views/calendar.html',
-            controller: 'CalendarController',
-            controllerAs: 'calendar'
+        .when ('/gigs', {
+            templateUrl: '/views/gigs.html',
+            controller: 'GigsController',
+            controllerAs: 'gigs'
         })
         .when ('/mp3s', {
             templateUrl: '/views/mp3s.html',

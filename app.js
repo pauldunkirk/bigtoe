@@ -4,9 +4,10 @@ var path = require('path');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-var router = require('./server/routes/routes.js');
-app.use('/routes',router);
-app.use('/inboundURLbase',router);
+var gigsroutes = require('./server/routes/gigsroutes.js');
+app.use('/gigsroutes',gigsroutes);
+var mp3sroutes = require('./server/routes/mp3sroutes.js');
+app.use('/mp3sroutes', mp3sroutes);
 app.use(express.static(path.join(__dirname, './public')));
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '.public/index.html'));

@@ -1,4 +1,4 @@
-myApp.controller('ContactsController',['CalendarFactory',function(CalendarFactory) {
+myApp.controller('ContactsController',['GigsFactory',function(GigsFactory) {
 
 console.log('Contacts controller running');
 
