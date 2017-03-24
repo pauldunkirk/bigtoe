@@ -1,64 +1,4 @@
 
-CREATE TABLE gigs (
-    id SERIAL PRIMARY KEY,
-    "gig"CREATE TABLE gigs (
-        id SERIAL PRIMARY KEY,
-        "gig" VARCHAR(80),
-        "address" VARCHAR(80),
-        "website" VARCHAR(80),
-        "date" date,
-        "soundcheck" date,
-        "start-end" date,
-        "pay" INT,
-        "guitar" VARCHAR(20),
-        "trumpt" VARCHAR(20),
-        "trombone" VARCHAR(20),
-        "sax" VARCHAR(20),
-        "keys" VARCHAR(20),
-        "bass" VARCHAR(20),
-        "female-vocals" VARCHAR(20),
-        "drums" VARCHAR(20),
-        "male-vocals" VARCHAR(20),
-        "prod-person" VARCHAR(20),
-        "prod-cost" INT,
-        "prod-size" VARCHAR(20)
-    );
-
-    ALTER TABLE gigs ALTER COLUMN soundcheck TYPE timestamp;
-     ALTER TABLE gigs ALTER COLUMN "start_end" TYPE timestamp;
-
-
-    INSERT INTO gigs ("gig", "address", "website", "date", "soundcheck", "start-end", "pay", "guitar", "trumpet",
-        "trombone", "sax", "keys", "bass", "female-vocals", "drums", "male-vocals", "prod-person", "prod-cost",
-        "prod-size")
-         VALUES ('Schuller''s Golden Valley','7345 Country Club Dr, Minneapolis, MN 55427',''http://www.schullerstavern.com/','2017-03-25 ','6:30','8:30-12:30','$100 ','Chris','Gerard','John','Bergy','Brian','Aaron','Paula','Nate','Paul','Tim F',150,'mix'),
-          ('Treasure Island 5 rooms, 1meal','5734 Sturgeon Lake Rd, Welch, MN 55089','http://www.ticasino.com/','2017-03-31 ',NULL,'8:30-1:30','$120 ','Chris','Tom Krochock','John','Bergy','Brian','Aaron','Paula','Jamie','Paul','NA',NULL,'NA'),
-          ('Treasure Island 5 rooms, 1meal','5734 Sturgeon Lake Rd, Welch, MN 55089','http://www.ticasino.com/','2017-04-01 ',NULL,'8:30-1:30','$120 ','Chris','Gerard ','John','Bergy','Brian','Aaron','Paula','Jamie','Paul','NA',NULL,'NA'),
-
-          ('Mystic','2400 Mystic Lake Blvd NW, Prior Lake, MN 55372','http://www.mysticlake.com/','2017-04-15 ','7:00','8pm-1am','$120 ','cannot','Cannot do','Cody LeDuc','Bergy','Brian','Aaron','Paula','Jamie','Paul','NA',NULL,NULL),
-          ('Schuller''s Golden Valley','7345 Country Club Dr, Minneapolis, MN 55427','http://www.schullerstavern.com/','2017-04-29 ',NULL,'8:30-12:30','$100 ','Chris','Cannot do','Ben Bussey','Bergy',NULL,NULL,'Paula','Jamie','Paul','PJ',NULL,'mix'),
-          ('Tim''s wedding Buffalo',NULL,NULL,'2017-05-27 ',NULL,'details to come','140','Chris','Gerard','John','Bergy','Theo','Aaron','Paula','Jamie','Paul','Tim',NULL,'full'),
-          ('PrivateParty- Minnetonka',NULL,NULL,'2017-05-28 ',NULL,'details to come','150 ','Chris','Gerard','John','Bergy','Theo','Aaron','Paula','Jamie','Paul','PJ?',NULL,NULL),
-          ('possible Gustavus Alumni concert',NULL,NULL,'2017-06-03 ','6?','9-10pm','',NULL,'Gerard',NULL,'Bergy',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-          ('John''s friend''s wedding',NULL,NULL,'2017-06-10 ',NULL,'details to come','140','Chris','Gerard','John','Bergy',NULL,'Aaron','Paula','Jamie','Paul','?',NULL,NULL),
-          ('Johnnie Timm''s wedding, Chisago, MN',NULL,NULL,'2017-06-17 ',NULL,'details to come','140','Chris','Gerard','John',NULL,'Brian','Aaron','Paula','Jamie','Paul','PJ',NULL,'full'),
-          ('Sal''s in St Joseph (hired by St John''s Univ)','109 W Minnesota St, St Joseph, MN 56374','http://salsbar.azurewebsites.net/','2017-06-24 ',NULL,'8pm-10:30pm','$140 ','maybe','Gerard ','John','Bergy','Brian','Aaron',NULL,'Jamie','Paul','PJ',NULL,'full'),
-          ('Summertime By George Festival - St Cloud ','Lake George Municipal Complex, 1101 7th St S, St Cloud, MN 56301','http://www.summertimebygeorge.com/','2017-07-26 ',NULL,'setup 4:00, gig 6:30-9:00','$200 ','Chris','Gerard','John',NULL,'Brian','Aaron','Paula','Jamie','Paul','NA',NULL,'NA'),
-          ('Ki Chi Saga Days, Chisago, MN','10625 Railroad Ave, Chisago City, MN 55013','https://www.facebook.com/KiChiSagaDays/','2017-08-19 ',NULL,'3:30-5:30','$100 ','Chris','Cannot do','John','Bergy',NULL,NULL,NULL,NULL,'Paul','?',NULL,'full'),
-          ('McKinsey Niehaus (Bergy''s friend) Millennium Hotel Minneapolis','1313 Nicollet Mall, Minneapolis, MN 55403','https://www.millenniumhotels.com/en/minneapolis/millennium-hotel-minneapolis/','2017-09-16 ',NULL,'scheck 5pm, 8:00-12:00','$140 ','Chris','Gerard ','John','Bergy',NULL,'Aaron',NULL,'Jamie','Paul','PJ',NULL,'full'),
-          ('Hutchinson Health Foundation Gala, Crow River Winery','14848 MN-7, Hutchinson, MN 55350','http://www.crowriverwinery.com/','2017-11-18 ',NULL,'setup by 6, gig 8-12','$150 ','Chris','Gerard ','John','Bergy',NULL,'Aaron',NULL,'Jamie','Paul','PJ',NULL,'full'),
-          ('Birch''s on the Lake','1310 Wayzata Blvd, Long Lake, MN 55356','http://www.birchsonthelake.com/','2017-12-09 ',NULL,'8pm-12','$100 ',NULL,'Cannot do',NULL,'Bergy',NULL,NULL,NULL,NULL,'Paul',NULL,NULL,'mix');
-
-
-          INSERT INTO gigs ("gig", "address", "website", "date", "soundcheck", "start-end", "pay", "guitar", "trumpet",
-              "trombone", "sax", "keys", "bass", "female-vocals", "drums", "male-vocals", "prod-person", "prod-cost",
-              "prod-size")
-               VALUES('Ki Chi Saga Days, Chisago, MN','10625 Railroad Ave, Chisago City, MN 55013','https://www.facebook.com/KiChiSagaDays/','2017-08-19 ',NULL,'3:30-5:30','$100 ','Chris','Cannot do','John','Bergy',NULL,NULL,NULL,NULL,'Paul','?',NULL,'full'),
-               ('McKinsey Niehaus (Bergy''s friend) Millennium Hotel Minneapolis','1313 Nicollet Mall, Minneapolis, MN 55403','https://www.millenniumhotels.com/en/minneapolis/millennium-hotel-minneapolis/','2017-09-16 ',NULL,'8:00-12:00','$140 ','Chris','Gerard ','John','Bergy',NULL,'Aaron',NULL,'Jamie','Paul','PJ',NULL,'full'),
-               ('Hutchinson Health Foundation Gala, Crow River Winery','14848 MN-7, Hutchinson, MN 55350','http://www.crowriverwinery.com/','2017-11-18 ',NULL,'setup by 6, gig 8-12','$150 ','Chris','Gerard ','John','Bergy',NULL,'Aaron',NULL,'Jamie','Paul','PJ',NULL,'full'),
-               ('Birch''s on the Lake','1310 Wayzata Blvd, Long Lake, MN 55356','http://www.birchsonthelake.com/','2017-12-09 ',NULL,'8pm-12','$100 ',NULL,'Cannot do',NULL,'Bergy',NULL,NULL,NULL,NULL,'Paul',NULL,NULL,'mix');
-
-
 
 
                ('http://bigtoeandthejam.com/SOUNDS/MP3ALL/1.1%20TurnLoose,%20Bartender,%2025or6.mp3',
@@ -1078,3 +1018,157 @@ VALUES('3.5 Friends In Low Places mp3.mp3',	'http://bigtoeandthejam.com/SOUNDS/M
 ('You May Be Right - short.mp3',	'http://bigtoeandthejam.com/SOUNDS/MP3ALL/You%20May%20Be%20Right%20-%20short.mp3'),
 ('You and Me - without long ending.mp3',	'http://bigtoeandthejam.com/SOUNDS/MP3ALL/You%20and%20Me%20-%20without%20long%20ending.mp3'),
 ('You are the best thing.mp3',	'http://bigtoeandthejam.com/SOUNDS/MP3ALL/You%20are%20the%20best%20thing.mp3');
+
+
+
+
+
+Ain't No Mountain High Enough-Score.pdf
+Ain't No Mountain High Enough-Tenor Sax Part.pdf
+Ain't No Mountain High Enough-Trombone Part.pdf
+Ain't No Mountain High Enough-Trumpet Part.pdf
+Billie Jean-Score.pdf
+Billie Jean-Tenor Sax Part.pdf
+Billie Jean-Trombone Part.pdf
+Billie Jean-Trumpet Part.pdf
+Brown Eyed Girl-Score.pdf
+Brown Eyed Girl-Tenor Sax Part.pdf
+Brown Eyed Girl-Trombone Part.pdf
+Brown Eyed Girl-Trumpet Part.pdf
+Burning Down the House-Score.pdf
+Burning Down the House-Tenor Sax Part.pdf
+Burning Down the House-Trombone Part.pdf
+Burning Down the House-Trumpet Part.pdf
+Celebration-Score.pdf
+Celebration-Tenor Sax Part.pdf
+Celebration-Trombone Part.pdf
+Celebration-Trumpet Part.pdf
+Don't Stop Believin'-Score.pdf
+Don't Stop Believin'-Tenor Sax Part.pdf
+Don't Stop Believin'-Trombone Part.pdf
+Don't Stop Believin'-Trumpet Part.pdf
+Everybody Dance Now-Score.pdf
+Everybody Dance Now-Tenor Sax Part.pdf
+Everybody Dance Now-Trombone Part.pdf
+Everybody Dance Now-Trumpet Part.pdf
+Friends In Low Places-Score.pdf
+Friends In Low Places-Trombone Part.pdf
+Friends In Low Places-Trumpet Part.pdf
+Get Lucky-Score.pdf
+Get Lucky-Tenor Sax Part.pdf
+Get Lucky-Trombone Part.pdf
+Get Lucky-Trumpet Part.pdf
+Good Times-Score.pdf
+Good Times-Tenor Sax Part.pdf
+Good Times-Trombone Part.pdf
+Good Times-Trumpet Part.pdf
+Happy-Score.pdf
+Happy-Tenor Sax Part.pdf
+Happy-Trombone Part.pdf
+Happy-Trumpet Part.pdf
+Heartbreaker-Score.pdf
+Heartbreaker-Tenor Sax Part.pdf
+Heartbreaker-Trombone Part.pdf
+Heartbreaker-Trumpet Part.pdf
+I Wish-Score.pdf
+I Wish-Tenor Sax Part.pdf
+I Wish-Trombone Part.pdf
+I Wish-Trumpet Part.pdf
+Let It Be-Score.pdf
+Let It Be-Tenor Sax Part.pdf
+Let It Be-Trombone Part.pdf
+Let It Be-Trumpet Part.pdf
+Let's Go Crazy-Score.pdf
+Let's Go Crazy-Tenor Sax Part.pdf
+Let's Go Crazy-Trombone Part.pdf
+Let's Go Crazy-Trumpet Part.pdf
+Locked Out of Heaven - Full-Score.pdf
+Locked Out of Heaven - Full-Tenor Sax Part.pdf
+Locked Out of Heaven - Full-Trombone Part.pdf
+Locked Out of Heaven - Full-Trumpet Part.pdf
+Love the One You're With-Score.pdf
+Love the One You're With-Tenor Sax Part.pdf
+Love the One You're With-Trombone Part.pdf
+Love the One You're With-Trumpet Part.pdf
+Mustang Sally-Score.v2.pdf
+Mustang Sally-Tenor Sax Part.v2.pdf
+Mustang Sally-Trombone Part.v2.pdf
+Mustang Sally-Trumpet Part.v2.pdf
+My Sharona (Short Edit)-Score.pdf
+My Sharona (Short Edit)-Tenor Sax Part.pdf
+My Sharona (Short Edit)-Trombone Part.pdf
+My Sharona (Short Edit)-Trumpet Part.pdf
+One Love-Score.pdf
+One Love-Tenor Sax Part.pdf
+One Love-Trombone Part.pdf
+One Love-Trumpet Part.pdf
+One Love_Let It Be-Score.pdf
+One Love_Let It Be-Tenor Sax Part.pdf
+One Love_Let It Be-Trombone Part.pdf
+One Love_Let It Be-Trumpet Part.pdf
+P.Y.T. (Pretty Young Thing)â€“Score.pdf
+P.Y.T. (Pretty Young Thing)â€“Tenor Sax Part.pdf
+P.Y.T. (Pretty Young Thing)â€“Trombone Part.pdf
+P.Y.T. (Pretty Young Thing)â€“Trumpet Part.pdf
+Papa's Got a Brand New Bag-Tenor Sax Part.pdf
+Papa's Got a Brand New Bag-Trombone Part.pdf
+Papa's Got a Brand New Bag-Trumpet Part.pdf
+Party Rock Anthem-Tenor Sax Part.pdf
+Party Rock Anthem-Trombone Part.pdf
+Party Rock Anthem-Trumpet Part.pdf
+Play That Funky Music-Score.pdf
+Play That Funky Music-Tenor Sax Part.pdf
+Play That Funky Music-Trombone Part.pdf
+Play That Funky Music-Trumpet Part.pdf
+Price Tag-Score.pdf
+Price Tag-Tenor Sax Part.pdf
+Price Tag-Trombone Part.pdf
+Price Tag-Trumpet Part.pdf
+Respect-Score.pdf
+Respect-Tenor Sax Part.pdf
+Respect-Trombone Part.pdf
+Respect-Trumpet Part.pdf
+Seven Nation Army-Score.pdf
+Seven Nation Army-Tenor Sax.pdf
+Seven Nation Army-Trombone.pdf
+Seven Nation Army-Trumpet.pdf
+Shout-Score.pdf
+Shout-Tenor Sax Part.pdf
+Shout-Trombone Part.pdf
+Shout-Trumpet Part.pdf
+Sir Duke-Score.pdf
+Sir Duke-Tenor Sax Part.pdf
+Sir Duke-Trombone Part.pdf
+Sir Duke-Trumpet Part.pdf
+Stand By Me-Score.pdf
+Stand By Me-Tenor Sax Part.pdf
+Stand By Me-Trombone Part.pdf
+Stand By Me-Trumpet Part.pdf
+Superstition-Score.pdf
+Superstition-Tenor Sax Part.pdf
+Superstition-Trombone Part.pdf
+Superstition-Trumpet Part.pdf
+Three Little Birds-Score.pdf
+Three Little Birds-Tenor Sax Part.pdf
+Three Little Birds-Trombone Part.pdf
+Three Little Birds-Trumpet Part.pdf
+Thriller-Score.pdf
+Thriller-Tenor Sax Part.pdf
+Thriller-Trombone Part.pdf
+Thriller-Trumpet Part.pdf
+Tightrope - New Edit-Score.pdf
+Tightrope - New Edit-Tenor Sax Part.pdf
+Tightrope - New Edit-Trombone Part.pdf
+Tightrope - New Edit-Trumpet Part.pdf
+Walkin' on Sunshine-Score.pdf
+Walkin' on Sunshine-Tenor Sax Part.pdf
+Walkin' on Sunshine-Trombone Part.pdf
+Walkin' on Sunshine-Trumpet Part.pdf
+You Are So Beautiful-Score.pdf
+You Are So Beautiful-Tenor Sax Part.pdf
+You Are So Beautiful-Trombone Part.pdf
+You Are So Beautiful-Trumpet Part.pdf
+You're the One That I Want-Score.pdf
+You're the One That I Want-Tenor Sax Part.pdf
+You're the One That I Want-Trombone Part.pdf
+You're the One That I Want-Trumpet Part.pdf

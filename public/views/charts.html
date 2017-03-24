@@ -1,4 +1,12 @@
-
-  <nav ng-include="'views/templates/nav.html'"></nav>
-  <h2>This is the blank charts.html file</h2>
-  {{charts.testMessage}}
+<div id="chartsdiv">
+    <nav ng-include="'views/templates/nav.html'"></nav>
+    <div class="container">
+        <table class="table paulsTable chartsTable">
+            <tbody>
+                <tr ng-repeat="ch in charts.chartsList.list">
+                    <td><a ng-href="{{ch.url}}" target="_blank">{{ch.name}}</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

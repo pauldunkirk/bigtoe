@@ -5,8 +5,10 @@
   "main": "index.js",
   "dependencies": {
     "angular": "^1.6.3",
+    "angular-animate": "^1.6.3",
     "angular-route": "^1.6.3",
     "angular-smart-table": "^2.1.8",
+    "angular-touch": "^1.6.3",
     "angular-xeditable": "^0.6.0",
     "angularfire": "^2.3.0",
     "body-parser": "^1.17.1",

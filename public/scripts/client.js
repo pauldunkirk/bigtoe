@@ -1,6 +1,8 @@
 var myApp = angular.module('myApp', ['ngRoute', 'xeditable', 'firebase']);
 myApp.config(['$routeProvider', function($routeProvider) {
 
+// angular.module('myApp', [require('angular-touch')]); //then source in html
+// angular.module('myApp', [require('angular-animate')]); //then source in html
 // var myApp = angular.module('myApp', ['ngRoute', 'xeditable', 'firebase', 'smart-table']);
 
 myApp.run(function(editableOptions) {

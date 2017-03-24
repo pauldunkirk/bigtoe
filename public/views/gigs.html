@@ -7,14 +7,6 @@
     <!-- paulsContainer -->
     <!-- <table st-table="gigs.gigsList.list"> -->
     <table class="table table-bordered table-hover paulsTable gigsTable">
-        <!-- table-responsive -->
-        <!-- col-md-12  -->
-        <!-- table-responsive table-condensed  vertical-center -->
-        <!-- <table st-table="displayedCollection" st-safe-src="rowCollection"> -->
-
-        <!-- http://lorenzofox3.github.io/smart-table-website/ -->
-        <!-- class="table-responsive paulsTable vertical-center table table-bordered table-hover table-condensed" -->
-        <!-- class="table table-striped" -->
         <thead>
             <tr>
                 <th class="setWidth">Gig</th>
@@ -33,9 +25,6 @@
                 <th>FVocals</th>
                 <th>Drums</th>
                 <th>MVocals</th>
-                <th>Prod</th>
-                <th>PCost</th>
-                <th>PSize</th>
             </tr>
         </thead>
         <tbody>
@@ -57,10 +46,7 @@
                 <td editable-text="g.female_vocals" onaftersave="gigs.updateGigs(g)">{{g.female_vocals || "empty"}}</td>
                 <td editable-text="g.drums" onaftersave="gigs.updateGigs(g)">{{g.drums || "empty"}}</td>
                 <td editable-text="g.male_vocals" onaftersave="gigs.updateGigs(g)">{{g.male_vocals || "empty"}}</td>
-                <td editable-text="g.prod_person" onaftersave="gigs.updateGigs(g)">{{g.prod_person || "empty"}}</td>
-                <td>{{g.prod_cost || "empty"}}</td>
-                <td><span editable-text="g.prod_size" onaftersave="gigs.updateGigs(g)">{{g.prod_size || "empty"}}</span></td>
-            </tr>
+                </tr>
         </tbody>
 
     </table>
