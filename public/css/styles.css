@@ -7,28 +7,24 @@ body {
 }
 
 
-
 .requestButton {
   opacity: .7 !important;
-  font-size: 2em;
+  font-size: 1.5em;
+}
+
+.requestInput {
+    font-size: 1.5em;
+    opacity: .7;
 }
 
 .loginButton {
   opacity: .7 !important;
   font-size: 1em;
+  text-align: right;
+  margin: 0px;
+  padding: 0px;
+  border-radius: .9em
 }
-
-
-.requestInput {
-    font-size: 2em;
-    opacity: .7;
-}
-
-
-.paulsButton {
-
-}
-
 
 .paulsContainer {
     background-size: 60%;
@@ -36,6 +32,12 @@ body {
     text-align: center !important;
 }
 
+.gigsTable {
+  /*font-size: 10px;*/
+    opacity: .9;
+    font-size: 1.2em;
+      font-family: sans-serif;
+}
 
 .paulsTable {
   background-color: #F8F8F8;
@@ -49,12 +51,7 @@ body {
     font-size: 2em;
     padding: 0px !important;
 }
-.gigsTable {
-  /*font-size: 10px;*/
-    opacity: .9;
-    font-size: 1.5em;
-      font-family: sans-serif;
-}
+
 
 .playersTable {
   /*font-size: 10px;*/
@@ -66,9 +63,14 @@ body {
 .requestsTable {
   /*font-size: 10px;*/
     opacity: .7;
-    font-size: 2em;
+    font-size: 1.2em;
       font-family: sans-serif;
 }
+
+.requestsTableHead {
+  color: red;
+}
+
 .chartsTable{
     opacity: .9; /* not DRY but wanted easy access to different opacity levels on each table*/
     font-size: 2em;

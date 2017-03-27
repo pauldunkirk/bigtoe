@@ -4,34 +4,62 @@
     </video>
 </div>
 
+<button ng-click="login.alertTest()">Test Alert</button>
+
 <div class="container loginContainer">
-    <div class="">
-        <button ng-click="login.logIn()" type="button" class="btn btn-primary btn-sm loginButton borderRadius">Band Members Log In</button>
+    <div class="loginButton">
+        <button ng-click="login.logIn()" type="button" class="btn btn-primary btn-sm loginButton">I'm In The Band</button>
     </div>
 </div>
 
-<div class="requestsTable borderRadius">
+<!-- Load Facebook SDK for JavaScript -->
+<!-- <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> -->
 
+<!-- Your like button code -->
+<!-- <div class="fb-like"
+  data-href="https://www.facebook.com/bigtoeandthejam/"
+  data-layout="standard"
+  data-action="like"
+  data-show-faces="true">
+</div> -->
+
+<!-- http://www.your-domain.com/your-page.html -->
+<!-- https://www.facebook.com/bigtoeandthejam/ -->
+
+<div class="requestsTable borderRadius">
 
     <input ng-model="login.newSong.song" placeholder="Song" class="requestInput borderRadius text-center"><br>
     <input ng-model="login.newSong.artist" placeholder="Artist" class="requestInput borderRadius text-center"><br>
     <input ng-model="login.newSong.requester" placeholder="Your Name" class="requestInput borderRadius text-center">
+
     <div class="">
-      <button ng-click="login.addSong()" type="button" class="btn btn-primary btn-lg requestButton borderRadius">Request a Song!</button>
-
+        <button ng-click="login.addSong()" type="button" class="btn btn-primary btn-lg requestButton borderRadius">Request a Song!</button>
     </div>
-<table class="table table-sm paulsTable gigsTable">
-  <thead>
 
-  </thead>
-    <tbody>
-      <tr ng-repeat="song in login.songsList.list">
-          <td>{{song.song}}</td>
-          <td>{{song.artist}}</td><br>
-          <td>Requested by: {{song.requester}}</td>
-      </tr>
-    </tbody>
-
-</table>
-
+<!-- {{login.getSongs()}} -->
+    <div class="container">
+        <table class="table table-condensed table-sm paulsTable requestsTable borderRadius">
+            <thead class="requestsTableHead">
+                <tr>
+                    <td class="text-center">Song</td>
+                    <td class="text-center">Artist</td>
+                    <td class="text-center">Requested by</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="song in login.songsList.list">
+                    <td class="text-center">{{song.song}}</td>
+                    <td class="text-center">{{song.artist}}</td><br>
+                    <td class="text-center">{{song.requester}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

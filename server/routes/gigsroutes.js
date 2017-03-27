@@ -20,7 +20,6 @@ router.get('/get/gigs', function(req, res) {
                 console.log(err);
                 res.sendStatus(500);
             } else {
-
                 pool.connect(function(err, client, done) {
                     if (authorizationResult.rows.length === 0) {
                         // If the user is not in the database, return a forbidden error status
