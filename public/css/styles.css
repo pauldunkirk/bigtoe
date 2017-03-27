@@ -6,14 +6,20 @@ body {
     background-position: center;
 }
 
-
-.requestButton {
-  opacity: .7 !important;
+.BigToeLinkButton {
+  color: black;
+  opacity: .7;
   font-size: 1.5em;
 }
 
+
+.requestButton {
+  opacity: .7 !important;
+  font-size: 2em;
+}
+
 .requestInput {
-    font-size: 1.5em;
+    font-size: 1.9em;
     opacity: .7;
 }
 

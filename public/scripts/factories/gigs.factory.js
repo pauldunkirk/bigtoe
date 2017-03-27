@@ -85,7 +85,17 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
       allGigs.list = response.data;
       // goToGigs();
     }).catch(function(error) {
-      alert("Sorry, your email isn't registered. Send it to me and I'll get you in the system. When you get the go ahead, make sure to close and reopen the browser window.");
+
+
+      //         swal("Oops...", "Something went wrong!", "error");
+      //sweetAlert({
+      // 	title: "Oops!",
+      //  text: "Something went wrong on the page!",
+      //  type: "error"
+      // });
+
+
+      swal("Sorry, this part of the app is meant for members of Big Toe and the Jam. Please click on the link to our website above. If you are a band member, sorry, your email isn't registered. Send it to me and I'll get you in the system.");
       console.log('error authenticating', error);
       auth.$signOut().then(function() {
         console.log('Logging the user out!');

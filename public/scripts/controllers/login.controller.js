@@ -1,15 +1,6 @@
   myApp.controller('LoginController', ['$firebaseAuth', 'GigsFactory', '$location', function($firebaseAuth, GigsFactory, $location) {
       var self = this;
 
-//       self.alertTest = function(){
-//         swal("Oops...", "Something went wrong!", "error");
-//       }
-//
-//       sweetAlert({
-// 	title: "Oops!",
-//     text: "Something went wrong on the page!",
-//     type: "error"
-// });
       self.songsList = GigsFactory.allSongs;
       // console.log(self.songsList);
 
