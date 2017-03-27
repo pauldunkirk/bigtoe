@@ -1,18 +1,40 @@
+<div class="">
+  <nav ng-include="'views/templates/nav.html'"></nav>
+</div>
 
 
-
-
-<div id="mp3sdiv">
-<nav ng-include="'views/templates/nav.html'"></nav>
 <div class="container">
-    <table class="table paulsTable mp3sTable">
+    <table class="table paulsTable mp3sTable borderRadius">
+        <thead>
+          </thead>
             <tbody>
                 <tr ng-repeat="m in mp3s.mp3sList.list">
                     <td>{{m.name}}</td>
-                    <td><audio controls preload="none" src="{{m.url}}" type="audio/mpeg" class="audio-player"></audio></td>
+                    <td><audio controls preload="none" src="{{m.url}}" type="audio/mpeg" class="btn btn-primary"></audio></td>
                 </tr>
             </tbody>
 
     </table>
-    </div>
 </div>
+
+
+<!-- http://www.jplayer.org/
+    <script type="text/javascript">
+     $(document).ready(function(){
+      $("#jquery_jplayer_1").jPlayer({
+       ready: function () {
+        $(this).jPlayer("setMedia", {
+         m4a: "/media/mysound.mp4",
+         oga: "/media/mysound.ogg"
+        });
+       },
+       swfPath: "/js",
+       supplied: "m4a, oga"
+      });
+     });
+    </script>
+    <div id="jquery_jplayer_1"></div>
+    <div id="jp_container_1">
+     <a href="#" class="jp-play">Play</a>
+     <a href="#" class="jp-pause">Pause</a>
+    </div> -->

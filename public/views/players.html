@@ -1,0 +1,39 @@
+<div class="">
+    <nav ng-include="'views/templates/nav.html'"></nav>
+</div>
+
+<div class="container">
+    <table class="table paulsTable playersTable borderRadius">
+        <thead>
+            <tr>
+                <th class="text-center">Gig</th>
+                <th>Date</th>
+                <th>Guitar</th>
+                <th>Trumpt</th>
+                <th>Bone</th>
+                <th>Sax</th>
+                <th>Keys</th>
+                <th>Bass</th>
+                <th>FVox</th>
+                <th>Drums</th>
+                <th>MVox</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="paulsTableRow" ng-repeat="p in players.gigsList.list">
+                <td editable-text="p.gig" onaftersave="players.updateGigs(p)">{{p.gig || "empty"}}</td>
+                <td>{{p.date | date:'MM/dd/yyyy'}}</td>
+                <td editable-text="p.guitar" onaftersave="players.updateGigs(p)">{{p.guitar || "empty"}}</td>
+                <td editable-text="p.trumpet" onaftersave="players.updateGigs(p)">{{p.trumpet || "empty"}}</td>
+                <td editable-text="p.trombone" onaftersave="players.updateGigs(p)">{{p.trombone || "empty"}}</td>
+                <td editable-text="p.sax" onaftersave="players.updateGigs(p)">{{p.sax || "empty"}}</td>
+                <td editable-text="p.keys" onaftersave="players.updateGigs(p)">{{p.keys || "empty"}}</td>
+                <td editable-text="p.bass" onaftersave="players.updateGigs(p)">{{p.bass || "empty"}}</td>
+                <td editable-text="p.female_vocals" onaftersave="players.updateGigs(p)">{{p.female_vocals || "empty"}}</td>
+                <td editable-text="p.drums" onaftersave="players.updateGigs(p)">{{p.drums || "empty"}}</td>
+                <td editable-text="p.male_vocals" onaftersave="players.updateGigs(p)">{{p.male_vocals || "empty"}}</td>
+                </tr>
+        </tbody>
+
+    </table>
+</div>

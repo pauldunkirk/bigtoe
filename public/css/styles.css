@@ -6,9 +6,118 @@ body {
     background-position: center;
 }
 
+
+
+.requestButton {
+  opacity: .7 !important;
+  font-size: 2em;
+}
+
 .loginButton {
   opacity: .7 !important;
+  font-size: 1em;
 }
+
+
+.requestInput {
+    font-size: 2em;
+    opacity: .7;
+}
+
+
+.paulsButton {
+
+}
+
+
+.paulsContainer {
+    background-size: 60%;
+    background-position: center;
+    text-align: center !important;
+}
+
+
+.paulsTable {
+  background-color: #F8F8F8;
+  font-weight: bold;
+  color: #000000 !important;
+    text-align: center !important;
+}
+.mp3sTable{
+    opacity: .9;
+    font-family: sans-serif;
+    font-size: 2em;
+    padding: 0px !important;
+}
+.gigsTable {
+  /*font-size: 10px;*/
+    opacity: .9;
+    font-size: 1.5em;
+      font-family: sans-serif;
+}
+
+.playersTable {
+  /*font-size: 10px;*/
+    opacity: .9;
+    font-size: 1.2em;
+      font-family: sans-serif;
+}
+
+.requestsTable {
+  /*font-size: 10px;*/
+    opacity: .7;
+    font-size: 2em;
+      font-family: sans-serif;
+}
+.chartsTable{
+    opacity: .9; /* not DRY but wanted easy access to different opacity levels on each table*/
+    font-size: 2em;
+    /*margin: -300 !important;*/
+    /*width: 400px;*/
+
+    /*width: 50%;*/
+
+
+}
+
+
+/*.paulsTableRow {
+  color: #000000 !important;
+}*/
+/*.table-bordered>tbody>tr>td:nth-child(1), .table-bordered>thead>tr>th:nth-child(1) {
+  width: 100px;
+  background-color: yellow;
+  font-size: 12px;
+}*/
+
+
+audio:hover, audio:focus, audio:active  {
+-webkit-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+-moz-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+
+-webkit-transform: scale(1.02);
+-moz-transform: scale(1.02);
+transform: scale(1.02);
+}
+
+
+audio  {
+  width: 150px;
+-webkit-transition:all 0.5s linear;
+-moz-transition:all 0.5s linear;
+-o-transition:all 0.5s linear;
+transition:all 0.5s linear;
+
+-moz-box-shadow: 2px 2px 4px 0px #006773;
+-webkit-box-shadow:  2px 2px 4px 0px #006773;
+box-shadow: 2px 2px 4px 0px #006773;
+
+-moz-border-radius:7px 7px 7px 7px ;
+-webkit-border-radius:7px 7px 7px 7px ;
+border-radius:7px 7px 7px 7px ;
+}
+
 
 .fullscreen-bg {
     position: fixed;
@@ -28,59 +137,12 @@ body {
     height: 100%;
 }
 
-
-
-
-
-#mp3sdiv {
-  background: url(jukebox.jpg) !important;
-  background-attachment: fixed !important;
-  background-size: 100vw !important;
-  text-align: center !important;
-  width: 100vw !important;
+.borderRadius {
+  border-radius: .6em !important;
 }
 
-.paulsContainer {
-  width: 70%;
-  background-position: center;
-  text-align: center;
-}
+.paulsRow {
+  margin: -300 !important;
+  padding: -100 !important;
 
-.paulsTable {
-  background-color: #F8F8F8;
-  padding: 0px;
-  font-weight: bold;
-  color: #000000;
-}
-
-.gigsTable {
-  font-size: 10px;
-    opacity: .9;
-}
-
-.mp3sTable{
-  font-size: 14px;
-    opacity: .8;
-}
-
-.chartsTable{
-  font-size: 14px;
-    opacity: .8;
-}
-
-.table-bordered>tbody>tr>td:nth-child(1), .table-bordered>thead>tr>th:nth-child(1) {
-  width: 100px;
-  background-color: yellow;
-  font-size: 12px;
-}
-
-.loginContainer {
-  padding: 120px;
-  opacity: .9;
-  width: 100%;
-  color: black;
-  background-position: center;
-}
-.welcome{
-  background-color: #ffffff;
 }

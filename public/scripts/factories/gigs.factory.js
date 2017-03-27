@@ -1,10 +1,39 @@
 myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($http, $firebaseAuth, $location) {
     console.log('Gigs Factory running');
 
+var factoryRequests = { list: [] };
+var someNewSong = {};
+
+function getSongs() {
+  $http({
+    method: 'GET',
+    url: '/requestsroutes'
+  }).then(function(response) {
+    console.log('response from factory: ', response);
+    console.log('response.data from factory: ', response.data);
+    factoryRequests.list = response.data;
+  });
+}
+
+
+    function addSong(someNewSong) {
+      $http({
+        method: 'POST',
+        url: '/requestsroutes/addrequest',
+        data: someNewSong
+      }).then(function(response){
+        console.log(response);
+        getSongs();
+      });
+    }
+
+
+
+
     var allGigs = { list: [] };
 
     function updateGigs(newGigInfo) {
-        console.log('update gigs without auth');
+        console.log('update gigs before auth');
         console.log(newGigInfo.id);
         firebase.auth().currentUser.getToken().then(function(idToken) {
             $http({
@@ -20,7 +49,7 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
                 allGigs.list = response.data;
                 getGigs(idToken);
             });
-            console.log('update gigs was hit');
+            // console.log('update gigs was hit');
         }).catch(function(error) {
             console.log('error authenticating', error);
         });
@@ -28,7 +57,7 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
 
     var auth = $firebaseAuth();
     auth.$onAuthStateChanged(function(firebaseUser) { // This code runs whenever the user changes authentication states e.g. whevenever the user logs in or logs out
-      console.log('gigs factory auth state changed');
+      // console.log('gigs factory auth state changed');
         if (firebaseUser) { // firebaseUser will be null if not logged in
             firebaseUser.getToken().then(function(idToken) { // This is where we make our call to our server
                 getGigs(idToken);
@@ -41,7 +70,7 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
     });
 
     function getGigs(idToken) {
-      console.log('getgigs running');
+      // console.log('getgigs running');
         $http({
             method: 'GET',
             url: '/gigsroutes/get/gigs',
@@ -49,10 +78,10 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
                 id_token: idToken
             }
         }).then(function(response) {
-            console.log('response from factory: ', response);
-            console.log('response.data from factory: ', response.data);
+            // console.log('response from factory: ', response);
+            // console.log('response.data from factory: ', response.data);
             allGigs.list = response.data;
-            goToCal();
+            // goToGigs();
         }).catch(function(error) {
             alert("Sorry, your email isn't registered. Send it to me and I'll get you in the system. When you get the go ahead, make sure to close and reopen the browser window.");
             console.log('error authenticating', error);
@@ -67,12 +96,14 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
         $location.path('/login');
     }
 
-    function goToCal() {
+    function goToGigs() {
         $location.path('/gigs');
     }
 
     return {
         allGigs: allGigs,
-        updateGigs: updateGigs
+        updateGigs: updateGigs,
+        allSongs: factoryRequests,
+        addSong: addSong
     };
 }]);

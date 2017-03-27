@@ -1,13 +1,37 @@
+<div class="fullscreen-bg">
+    <video loop muted autoplay poster="" class="fullscreen-bg__video">
+        <source src="css/btbtbt.mp4" type="video/mp4">
+    </video>
+</div>
 
-    <div class="container loginContainer">
-        <div id="welcome">
-            <!-- <h2>Welcome Musicians</h2> -->
-            <div class=""><button ng-click="login.logIn()" type="button" class="btn btn-primary btn-lg loginButton">LOG IN, BROSEF!</button></div>
-        </div>
-      </div>
-      <div class="fullscreen-bg">
-          <video loop muted autoplay poster="" class="fullscreen-bg__video">
-              <source src="css/btbtbt.mp4" type="video/mp4">
+<div class="container loginContainer">
+    <div class="">
+        <button ng-click="login.logIn()" type="button" class="btn btn-primary btn-sm loginButton borderRadius">Band Members Log In</button>
+    </div>
+</div>
 
-          </video>
-      </div>
+<div class="requestsTable borderRadius">
+
+
+    <input ng-model="login.newSong.song" placeholder="Song" class="requestInput borderRadius text-center"><br>
+    <input ng-model="login.newSong.artist" placeholder="Artist" class="requestInput borderRadius text-center"><br>
+    <input ng-model="login.newSong.requester" placeholder="Your Name" class="requestInput borderRadius text-center">
+    <div class="">
+      <button ng-click="login.addSong()" type="button" class="btn btn-primary btn-lg requestButton borderRadius">Request a Song!</button>
+
+    </div>
+<table class="table table-sm paulsTable gigsTable">
+  <thead>
+
+  </thead>
+    <tbody>
+      <tr ng-repeat="song in login.songsList.list">
+          <td>{{song.song}}</td>
+          <td>{{song.artist}}</td><br>
+          <td>Requested by: {{song.requester}}</td>
+      </tr>
+    </tbody>
+
+</table>
+
+</div>

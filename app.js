@@ -16,6 +16,10 @@ app.listen(portDecision, function(){
   console.log("Listening on port: ", portDecision);
 });
 
+var requestsroutes = require('./server/routes/requestsroutes.js');
+app.use('/requestsroutes', requestsroutes);
+
+
 // above not secure happens before token - next 2 lines require token
 var decoder = require('./server/modules/decoder');
 app.use(decoder.token);

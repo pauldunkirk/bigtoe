@@ -1,12 +1,13 @@
-<div id="chartsdiv">
+<!-- <div id="chartsdiv"> -->
     <nav ng-include="'views/templates/nav.html'"></nav>
-    <div class="container">
-        <table class="table paulsTable chartsTable">
+
+
+    <div class="container paulsContainer">
+        <table class="table paulsTable chartsTable borderRadius">
             <tbody>
-                <tr ng-repeat="ch in charts.chartsList.list">
+                <tr class="paulsRow" ng-repeat="ch in charts.chartsList.list">
                     <td><a ng-href="{{ch.url}}" target="_blank">{{ch.name}}</a></td>
                 </tr>
             </tbody>
         </table>
     </div>
-</div>

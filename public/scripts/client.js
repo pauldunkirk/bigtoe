@@ -14,13 +14,15 @@ myApp.run(function(editableOptions) {
           templateUrl: '/views/login.html',
           controller: 'LoginController',
           controllerAs: 'login'
-        })
-        .when ('/gigs', {
+        }).when ('/gigs', {
             templateUrl: '/views/gigs.html',
             controller: 'GigsController',
             controllerAs: 'gigs'
-        })
-        .when ('/mp3s', {
+        }).when ('/players', {
+            templateUrl: '/views/players.html',
+            controller: 'GigsController',
+            controllerAs: 'players'
+        }).when ('/mp3s', {
             templateUrl: '/views/mp3s.html',
             controller: 'mp3sController',
             controllerAs: 'mp3s'
@@ -36,8 +38,7 @@ myApp.run(function(editableOptions) {
             templateUrl: '/views/setlists.html',
             controller: 'SetlistsController',
             controllerAs: 'setlists'
-        })
-        .otherwise ( {
+        }).otherwise ({
             redirectTo: '/login'
         });
 

@@ -8,6 +8,6 @@ self.gigsList = GigsFactory.allGigs;
 self.updateGigs = GigsFactory.updateGigs;
 
 console.log(self.gigsList);
-console.log(self.gigsList.list);
+// console.log(self.gigsList.list);
 
 }]);
