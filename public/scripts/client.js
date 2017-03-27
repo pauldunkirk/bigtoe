@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'xeditable', 'firebase', 'sweetalert']);
+var myApp = angular.module('myApp', ['ngRoute', 'xeditable', 'firebase']);
 myApp.config(['$routeProvider', function($routeProvider) {
 
 // angular.module('myApp', [require('angular-touch')]); //then source in html
