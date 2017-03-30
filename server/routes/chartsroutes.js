@@ -9,34 +9,6 @@ var config = {
 };
 var pool = new pg.Pool(config);
 
-//   router.get('/get/charts', function(req, res) {
-//   console.log('hit my get charts route');
-//   pool.connect(function(err, client, done) {
-//     if(err){
-//       console.log(err);
-//       res.sendStatus(500);
-//     }else{
-//       client.query('SELECT * FROM charts ORDER BY id', function(err, result) {
-//         done();
-//         if(err){
-//           console.log(err);
-//           res.sendStatus(500);
-//         }else{
-//           console.log(result.rows);
-//           res.status(200).send(result.rows);
-//         }
-//       });
-//     }
-//   });
-// });
-//
-// module.exports = router;
-
-
-//////////////////////////////////
-
-
-
 
 router.get('/get/charts', function(req, res) {
     console.log('hit my get charts route');

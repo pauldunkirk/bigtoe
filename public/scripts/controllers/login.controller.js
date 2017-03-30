@@ -23,17 +23,20 @@
 
       self.logIn = function() {
           auth.$signInWithPopup("google").then(function(firebaseUser) {
-              goToGigs();
+              goToRequests();
               console.log("Firebase Authenticated as: ", firebaseUser.user.displayName);
           }).catch(function(error) {
               console.log("Authentication failed: ", error);
           });
       };
 
-
-      function goToGigs() {
-          $location.path('/gigs');
+      function goToRequests() {
+          $location.path('/requests');
       }
+
+      // function goToGigs() {
+      //     $location.path('/gigs');
+      // }
 
       self.logOut = function() {
           console.log('trying to sign out');

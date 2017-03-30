@@ -1,5 +1,5 @@
 myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($http, $firebaseAuth, $location) {
-  console.log('Gigs Factory running');
+  // console.log('Gigs Factory running');
 
   var factoryRequests = { list: [] };
   var someNewSong = {};
@@ -13,8 +13,8 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
       method: 'GET',
       url: '/requestsroutes'
     }).then(function(response) {
-      console.log('response from factory: ', response);
-      console.log('response.data from factory: ', response.data);
+      // console.log('response from factory: ', response);
+      // console.log('response.data from factory: ', response.data);
       factoryRequests.list = response.data;
     });
   }
@@ -42,8 +42,8 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
   }
 
   function updateGigs(newGigInfo) {
-    console.log('update gigs before auth');
-    console.log(newGigInfo.id);
+    // console.log('update gigs before auth');
+    // console.log(newGigInfo.id);
     firebase.auth().currentUser.getToken().then(function(idToken) {
       $http({
         method: 'PUT',
@@ -72,7 +72,6 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
       console.log('someUser',someUser);
       firebaseUser.getToken().then(function(idToken) { // This is where we make our call to our server
         getGigs(idToken);
-        // return canDeleteRequests;
       });
     } else {
       console.log('Not logged in or not authorized.');
@@ -107,9 +106,9 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
     $location.path('/login');
   }
 
-  function goToGigs() {
-    $location.path('/gigs');
-  }
+  // function goToGigs() {
+  //   $location.path('/gigs');
+  // }
 
 console.log(someUser);
 

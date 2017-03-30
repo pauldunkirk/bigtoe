@@ -30,7 +30,6 @@ router.get('/', function(req, res) {
         }
     });
 });
-//
 
 
 router.post('/addrequest', function(req, res) {
@@ -78,11 +77,6 @@ router.delete('/:id', function(req, res) {
     }
   });
 });
-
-
-
-
-
 
 
 module.exports = router;
