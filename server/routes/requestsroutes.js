@@ -1,18 +1,21 @@
 var router = require('express').Router();
 var pg = require('pg');
-var config = {
-    database: 'bigtoe',
-    host: 'localhost',
-    port: 5432,
-    max: 10,
-    idleTimeoutMillis: 30000
-};
 
-var pool = new pg.Pool(config);
+var connectionString = require('../modules/database-config');
+
+// var config = {
+//     database: 'bigtoe',
+//     host: 'localhost',
+//     port: 5432,
+//     max: 10,
+//     idleTimeoutMillis: 30000
+// };
+//
+// var pool = new pg.Pool(config);
 
 router.get('/', function(req, res) {
     console.log('hit my get requests route');
-    pool.connect(function(err, client, done) {
+    pg.connect(connectionString, function(err, client, done){
         if (err) {
             console.log(err);
             res.sendStatus(500);
@@ -36,7 +39,7 @@ router.post('/addrequest', function(req, res) {
   console.log('hit post route');
   console.log('here is the body ->', req.body);
   var someNewSong = req.body;
-  pool.connect(function(err, client, done) {
+  pg.connect(connectionString, function(err, client, done){
     if(err){
       console.log(err);
       res.sendStatus(500);
@@ -59,7 +62,7 @@ router.delete('/:id', function(req, res) {
   var songToDeleteId = req.params.id;
   console.log('hit delete route');
   console.log('here is the id to delete ->', songToDeleteId);
-  pool.connect(function(err, client, done) {
+  pg.connect(connectionString, function(err, client, done){
     if(err){
       console.log(err);
       res.sendStatus(500);

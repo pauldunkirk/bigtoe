@@ -1,18 +1,21 @@
 var router = require('express').Router();
 var pg = require('pg');
-var config = {
-    database: 'bigtoe',
-    host: 'localhost',
-    port: 5432,
-    max: 10,
-    idleTimeoutMillis: 30000
-};
 
-var pool = new pg.Pool(config);
+var connectionString = require('../modules/database-config');
+
+// var config = {
+//     database: 'bigtoe',
+//     host: 'localhost',
+//     port: 5432,
+//     max: 10,
+//     idleTimeoutMillis: 30000
+// };
+//
+// var pool = new pg.Pool(config);
 
 router.get('/get/gigs', function(req, res) {
     console.log('hit my get gigs route');
-    pool.connect(function(err, client, done) {
+    pg.connect(connectionString, function(err, client, done){
         var userEmail = req.decodedToken.email;
         client.query('SELECT * FROM users WHERE email=$1', [userEmail], function(err, authorizationResult) {
             done();
@@ -20,7 +23,7 @@ router.get('/get/gigs', function(req, res) {
                 console.log(err);
                 res.sendStatus(500);
             } else {
-                pool.connect(function(err, client, done) {
+                pg.connect(connectionString, function(err, client, done){
                     if (authorizationResult.rows.length === 0) {
                         // If the user is not in the database, return a forbidden error status
                         console.log('No user found with that email. Have you added this person to the database? Email: ', req.decodedToken.email);
@@ -46,7 +49,7 @@ router.get('/get/gigs', function(req, res) {
 router.put('/update/gigs', function(req, res) {
     var newGigInfo = req.body;
     console.log('hit my put - edit- gigs route');
-    pool.connect(function(err, client, done) {
+    pg.connect(connectionString, function(err, client, done){
         var userEmail = req.decodedToken.email;
         client.query('SELECT * FROM users WHERE email=$1', [userEmail], function(err, authorizationResult) {
             done();
@@ -54,7 +57,7 @@ router.put('/update/gigs', function(req, res) {
                 console.log(err);
                 res.sendStatus(500);
             } else {
-                pool.connect(function(err, client, done) {
+                pg.connect(connectionString, function(err, client, done){
                     if (authorizationResult.rows.length === 0) {
                         // If the user is not in the database, return a forbidden error status
                         console.log('No user found with that email. Have you added this person to the database? Email: ', req.decodedToken.email);
