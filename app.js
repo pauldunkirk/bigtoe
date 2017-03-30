@@ -1,4 +1,6 @@
 // require express, path, body-parser - above the token
+require('dotenv').config();
+
 var express = require('express');
 var app = express();
 var path = require('path');
