@@ -2,34 +2,23 @@
     <nav ng-include="'views/templates/nav.html'"></nav>
 </div>
 
-
-
-<div class="container">
-    <!-- paulsContainer     table-inverse  -->
-    <!-- <table st-table="gigs.gigsList.list"> -->
+<div class="container paulsContainer">
     <table class="table table-hover table-sm paulsTable gigsTable borderRadius">
         <thead class="text-center">
             <tr class="text-center">
                 <th class="text-center">Gig</th>
-                <th class="text-center">Map</th>
+                <th class="text-center"><a href="https://fusiontables.google.com/DataSource?docid=1WmZs0y5C14FRKD2PE5R6DDchRCjByjaaM493mR8K&pli=1#map:id=3" target="_blank">Map</a></th>
                 <th class="text-center" >Date</th>
                 <th class="text-center">Time</th>
             </tr>
         </thead>
         <tbody>
             <tr class="paulsRow" ng-repeat="g in gigs.gigsList.list">
-
                 <td><a ng-href="{{g.website}}" target="_blank">{{g.gig}}</a></td>
                 <td><a ng-href="http://maps.google.com/?q={{g.address}}" ng-href="{{g.website}}" target="_blank">map</a></td>
-
-
-
-
                 <td>{{g.date | date:'MM/dd/yyyy'}}</td>
                 <td editable-text="g.start_end" onaftersave="gigs.updateGigs(g)">{{g.start_end}}</td>
-
-                </tr>
+            </tr>
         </tbody>
-
     </table>
 </div>

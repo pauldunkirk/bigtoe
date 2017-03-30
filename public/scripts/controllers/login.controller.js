@@ -2,13 +2,22 @@
       var self = this;
 
       self.songsList = GigsFactory.allSongs;
-      // console.log(self.songsList);
+      self.getSongs=GigsFactory.getSongs;
 
+      self.someUser=GigsFactory.someUser;
+      // console.log(GigsFactory);
+// console.log(GigsFactory.canDeleteRequests);
+// console.log(self.canDeleteRequests);
       self.newSong = {};
+
       self.addSong = function() {
           GigsFactory.addSong(self.newSong);
           self.newSong = {};
       };
+
+      self.deleteSong = function(songId) {
+            GigsFactory.deleteSong(songId);
+        };
 
       var auth = $firebaseAuth();
 

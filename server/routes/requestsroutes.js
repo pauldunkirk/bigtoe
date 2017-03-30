@@ -17,7 +17,7 @@ router.get('/', function(req, res) {
             console.log(err);
             res.sendStatus(500);
         } else {
-            client.query('SELECT * FROM requests', function(err, result) {
+            client.query('SELECT * FROM requests ORDER BY id DESC', function(err, result) {
                 done();
                 if (err) {
                     console.log(err);
@@ -55,6 +55,30 @@ router.post('/addrequest', function(req, res) {
     }
   });
 });
+
+router.delete('/:id', function(req, res) {
+  var songToDeleteId = req.params.id;
+  console.log('hit delete route');
+  console.log('here is the id to delete ->', songToDeleteId);
+  pool.connect(function(err, client, done) {
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    }else{
+      client.query('DELETE FROM requests WHERE id=$1;',
+        [songToDeleteId], function(err, result) {
+          done();
+          if(err){
+            console.log(err);
+            res.sendStatus(500);
+          }else{
+            res.sendStatus(200);
+          }
+      });
+    }
+  });
+});
+
 
 
 

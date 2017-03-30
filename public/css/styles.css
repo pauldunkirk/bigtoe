@@ -1,94 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
     background:  #000000 url(BTJ_2015_01.svg) no-repeat;
     background-attachment: fixed;
     background-size: 60%;
     text-align: center;
     background-position: center;
-}
-
-.BigToeLinkButton {
-  color: black;
-  opacity: .7;
-  font-size: 1.5em;
-}
-
-
-.requestButton {
-  opacity: .7 !important;
-  font-size: 2em;
-}
-
-.requestInput {
-    font-size: 1.9em;
-    opacity: .7;
-}
-
-.loginButton {
-  opacity: .7 !important;
-  font-size: 1em;
-  text-align: right;
-  margin: 0px;
-  padding: 0px;
-  border-radius: .9em
+    padding: 10px;
+    font-family: 'actor';
 }
 
 .paulsContainer {
+    width: 60%;
     background-size: 60%;
     background-position: center;
     text-align: center !important;
+    /*box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);*/
+    box-shadow: 5px 5px 30px rgba(0,0, 0, 0.8);
 }
 
 .gigsTable {
   /*font-size: 10px;*/
     opacity: .9;
     font-size: 1.2em;
-      font-family: sans-serif;
 }
-
 .paulsTable {
   background-color: #F8F8F8;
   font-weight: bold;
   color: #000000 !important;
     text-align: center !important;
+      opacity: .9;
+      /*box-shadow: 5px 5px 20px rgba(0,0, 0, 0.8);*/
+
+
 }
 .mp3sTable{
     opacity: .9;
-    font-family: sans-serif;
     font-size: 2em;
-    padding: 0px !important;
+    /*box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);*/
 }
-
-
 .playersTable {
-  /*font-size: 10px;*/
     opacity: .9;
     font-size: 1.2em;
-      font-family: sans-serif;
+    /*box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);*/
 }
-
-.requestsTable {
-  /*font-size: 10px;*/
-    opacity: .7;
-    font-size: 1.2em;
-      font-family: sans-serif;
-}
-
-.requestsTableHead {
-  color: red;
-}
-
 .chartsTable{
     opacity: .9; /* not DRY but wanted easy access to different opacity levels on each table*/
     font-size: 2em;
-    /*margin: -300 !important;*/
-    /*width: 400px;*/
-
-    /*width: 50%;*/
-
-
+    /*box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);*/
+}
+.contactsTable {
+    opacity: .9;
+    font-size: 1.2em;
 }
 
 
+
+.bigToeLogoLink {
+  /*opacity: .7;*/
+  width: 180px;
+  height: 150px;
+  position: fixed;
+  z-index: 1;
+  left: 10px;
+}
+
+.paulsFontAwesome !important{
+  font-size:48px;
+  color: white;
+  opacity: .9;
+}
+}
+.requestsInputTable {
+  opacity: .7;
+  box-shadow: 10px 10px 10px 10px rgba(0,0, 0, 0.8);
+}
+.requestInput {
+    font-size: 1.6em;
+      opacity: .7;
+    /*padding: 0px !important;*/
+}
+.requestButton {
+  opacity: .7;
+  font-size: 2em;
+  border-radius: none;
+}
+
+.requestsTableHead {
+  color: #F08080;
+}
+.requestsTableRows{
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+}
+.requestedSongsTable {
+    opacity: .7;
+    font-size: 1.6em;
+    box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);
+}
+
+.loginButton {
+  opacity: .7 !important;
+  font-size: 1.1em;
+  text-align: right;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 15px 15px 20px rgba(0,0, 0, 0.8);
+}
+
+
+
+
+.paulsRow {
+  margin: -300 !important;
+  padding: -100 !important;
+}
 /*.paulsTableRow {
   color: #000000 !important;
 }*/
@@ -108,8 +135,6 @@ box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
 -moz-transform: scale(1.02);
 transform: scale(1.02);
 }
-
-
 audio  {
   width: 150px;
 -webkit-transition:all 0.5s linear;
@@ -125,7 +150,6 @@ box-shadow: 2px 2px 4px 0px #006773;
 -webkit-border-radius:7px 7px 7px 7px ;
 border-radius:7px 7px 7px 7px ;
 }
-
 
 .fullscreen-bg {
     position: fixed;
@@ -149,8 +173,11 @@ border-radius:7px 7px 7px 7px ;
   border-radius: .6em !important;
 }
 
-.paulsRow {
-  margin: -300 !important;
-  padding: -100 !important;
 
+/*.currentNav {
+  color: red !important;
+}*/
+.navContainer {
+  /*background-color: white;
+  opacity: .8;*/
 }

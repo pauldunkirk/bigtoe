@@ -2,10 +2,17 @@
   <nav ng-include="'views/templates/nav.html'"></nav>
 
 
-</div>
-<div class="fullscreen-bg">
-    <video loop muted autoplay poster="" class="fullscreen-bg__video">
-        <source src="css/btbtbt.mp4" type="video/mp4">
+<div class="container paulsContainer">
+    <table class="table paulsTable contactsTable borderRadius">
+        <thead>
+          </thead>
+            <tbody>
+                <tr ng-repeat="m in contacts.contactsList.list">
+                    <td>{{m.name}}</td>
+                    <td>{{m.instrument}}</td>
+                    <td>{{m.email}}</td>
+                </tr>
+            </tbody>
 
-    </video>
+    </table>
 </div>

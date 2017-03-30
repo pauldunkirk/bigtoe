@@ -11,21 +11,19 @@ var config = {
 };
 var pool = new pg.Pool(config);
 
-// send an email once per week to user who has an "empty" cell in gigs table
-// once per week, node-cron calls findEmpty() function: gets gigs table, compares columns to empty,
+// send an email once per week to user who has an "null" cell in gigs table
+// once per week, node-cron calls findEmptySendEmail() function: gets gigs table, compares columns to empty,
 // if guitar, trumpet, trombone, sax, keys, bass, female_vocals, drums, male_vocals === empty then sendEmail()
 // must check against email database: users
 
 
-var job = new cron.CronJob('5 16 * * sun', function() {
-   sendEmailOnStartup();
+var job = new cron.CronJob('* * * * *', function() {
+  // findEmptySendEmail();
    console.log('Function executed!');
 }, null, true);
 //actually want this: '5 16 * * sun'
 
-
-// sendEmailOnStatup();
-function sendEmailOnStartup() {
+function findEmptySendEmail() {
   // router.get('/', function(req, res) {
   //   console.log('hit my get users for nodemailer route');
   pool.connect(function(err, client, done) {
@@ -33,7 +31,7 @@ function sendEmailOnStartup() {
       console.log(err);
       res.sendStatus(500);
     } else {
-      client.query('SELECT * FROM gigs', function(err, result) {
+      client.query('SELECT * FROM gigs ORDER by id ASC', function(err, result) {
         done();
         if (err) {
           console.log(err);
@@ -47,20 +45,24 @@ function sendEmailOnStartup() {
             {instrument: 'keys' , emailofpersontobother: 'pauldunkirk@gmail.com'},
             {instrument: 'bass' , emailofpersontobother: 'pauldunkirk@gmail.com'},
             {instrument: 'female_vocals' , emailofpersontobother: 'pauldunkirk@gmail.com'},
-            {instrument: 'drums' , emaemailofpersontobotheril: 'pauldunkirk@gmail.com'},
+            {instrument: 'drums' , emailofpersontobother: 'pauldunkirk@gmail.com'},
             {instrument: 'male_vocals' , emailofpersontobother: 'pauldunkirk@gmail.com'}
           ];
           // hardcode array of objects that each have {instrument: 'database_column_title', emailofpersontobother: 'guitarist@gmail.com'}
           // for loop through this array
-          console.log(result.rows);
+          // console.log(result.rows);
 
           for (var i = 0; i < bandMembers.length; i++) {
-
+            var gigId;
             var sendEmail = false;
             var currentInstrument= bandMembers[i].instrument;
             var currentEmailOfPersonToBother= bandMembers[i].emailofpersontobother;
             for (var a = 0; a < result.rows.length; a++) {
-              if (result.rows[i][currentInstrument] === null) { // guitar needs to be replaced with bracket notation [instrument]
+              if (result.rows[a][currentInstrument] === null) { // guitar needs to be replaced with bracket notation [instrument]
+                gigId = result.rows[a].id;
+                console.log('Gig ID NULL: ', gigId);
+                console.log('Instrument:', currentInstrument);
+
                 sendEmail = true;
               }
             }
@@ -83,7 +85,7 @@ function sendEmailOnStartup() {
               };
               transporter.sendMail(mailOptions, function(error, info) {
                 if (error) {
-                  console.log(error);
+                  console.log('Error sending: ', error);
                   res.sendStatus(500);
                 } else {
                   console.log('Message sent: ', info.response);
@@ -97,4 +99,4 @@ function sendEmailOnStartup() {
     }
   });
 }
-module.exports = sendEmailOnStartup;
+module.exports = findEmptySendEmail;

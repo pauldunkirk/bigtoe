@@ -38,6 +38,14 @@ myApp.run(function(editableOptions) {
             templateUrl: '/views/setlists.html',
             controller: 'SetlistsController',
             controllerAs: 'setlists'
+        }).when ('/video', {
+            templateUrl: '/views/video.html',
+            controller: 'VideoController',
+            controllerAs: 'video'
+        }).when ('/requests', {
+            templateUrl: '/views/requests.html',
+            controller: 'LoginController',
+            controllerAs: 'login'
         }).otherwise ({
             redirectTo: '/login'
         });

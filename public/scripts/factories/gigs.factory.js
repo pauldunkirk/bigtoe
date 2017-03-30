@@ -4,8 +4,9 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
   var factoryRequests = { list: [] };
   var someNewSong = {};
   var allGigs = { list: [] };
+  var someUser = {canDeleteRequests: false};
 
-  // getSongs();
+  getSongs();
 
   function getSongs() {
     $http({
@@ -29,10 +30,16 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
     });
   }
 
-
-
-
-
+  function deleteSong(songId) {
+    $http({
+      method: 'DELETE',
+      url: '/requestsroutes/' + songId,
+      // data: songId
+    }).then(function(response) {
+      console.log(response);
+      getSongs();
+    });
+  }
 
   function updateGigs(newGigInfo) {
     console.log('update gigs before auth');
@@ -59,10 +66,13 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
 
   var auth = $firebaseAuth();
   auth.$onAuthStateChanged(function(firebaseUser) { // This code runs whenever the user changes authentication states e.g. whevenever the user logs in or logs out
-    // console.log('gigs factory auth state changed');
+    console.log('gigs factory auth state changed');
     if (firebaseUser) { // firebaseUser will be null if not logged in
+      someUser.canDeleteRequests = true;
+      console.log('someUser',someUser);
       firebaseUser.getToken().then(function(idToken) { // This is where we make our call to our server
         getGigs(idToken);
+        // return canDeleteRequests;
       });
     } else {
       console.log('Not logged in or not authorized.');
@@ -85,22 +95,11 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
       allGigs.list = response.data;
       // goToGigs();
     }).catch(function(error) {
-
-
-      //         swal("Oops...", "Something went wrong!", "error");
-      //sweetAlert({
-      // 	title: "Oops!",
-      //  text: "Something went wrong on the page!",
-      //  type: "error"
-      // });
-
-
       swal("Sorry, this part of the app is meant for members of Big Toe and the Jam. Please click on the link to our website above. If you are a band member, sorry, your email isn't registered. Send it to me and I'll get you in the system.");
       console.log('error authenticating', error);
       auth.$signOut().then(function() {
-        console.log('Logging the user out!');
+      console.log('Logging the user out!');
       });
-
     });
   }
 
@@ -112,10 +111,15 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
     $location.path('/gigs');
   }
 
+console.log(someUser);
+
   return {
     allGigs: allGigs,
     updateGigs: updateGigs,
     allSongs: factoryRequests,
-    addSong: addSong
+    addSong: addSong,
+    getSongs: getSongs,
+    deleteSong: deleteSong,
+    someUser: someUser
   };
 }]);

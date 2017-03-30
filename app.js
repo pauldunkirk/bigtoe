@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
-var automaticEmails = require('./server/modules/automatic-emails');
+var findEmptySendEmail = require('./server/modules/automatic-emails');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, './public')));
@@ -16,7 +16,7 @@ app.get('/', function(req, res) {
 var portDecision = process.env.PORT || 5000;
 app.listen(portDecision, function(){
   console.log("Listening on port: ", portDecision);
-  // automaticEmails();
+  // findEmptySendEmail();
 });
 
 var requestsroutes = require('./server/routes/requestsroutes.js');
@@ -34,3 +34,5 @@ var mp3sroutes = require('./server/routes/mp3sroutes.js');
 app.use('/mp3sroutes', mp3sroutes);
 var chartsroutes = require('./server/routes/chartsroutes.js');
 app.use('/chartsroutes', chartsroutes);
+var contactsroutes = require('./server/routes/contactsroutes.js');
+app.use('/contactsroutes', contactsroutes);
