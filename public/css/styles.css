@@ -3,102 +3,67 @@
 body {
     background:  #000000 url(BTJ_2015_01.svg) no-repeat;
     background-attachment: fixed;
-    background-size: 60%;
+    background-size: 55%;
     text-align: center;
     background-position: center;
-    padding: 10px;
+    /*padding: 10px;*/
     font-family: 'actor';
 }
 
-.paulsContainer {
-    width: 60%;
-    background-size: 60%;
-    background-position: center;
-    text-align: center !important;
+.container {
+    /*width: 60%;*/
+    /*background-size: 60%;*/
+    /*background-position: center;*/
+    /*text-align: center !important;*/
     /*box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);*/
-    box-shadow: 5px 5px 30px rgba(0,0, 0, 0.8);
+    /*box-shadow: 5px 5px 30px rgba(0,0, 0, 0.8);*/
 }
 
-.gigsTable {
-  /*font-size: 10px;*/
-    opacity: .9;
-    font-size: 1.2em;
-}
-.paulsTable {
+
+.table {
   background-color: #F8F8F8;
   font-weight: bold;
-  color: #000000 !important;
-    text-align: center !important;
       opacity: .9;
+      font-size: 1.2em;
+      box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);
       /*box-shadow: 5px 5px 20px rgba(0,0, 0, 0.8);*/
-
-
-}
-.mp3sTable{
-    opacity: .9;
-    font-size: 2em;
-    /*box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);*/
-}
-.playersTable {
-    opacity: .9;
-    font-size: 1.2em;
-    /*box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);*/
-}
-.chartsTable{
-    opacity: .9; /* not DRY but wanted easy access to different opacity levels on each table*/
-    font-size: 2em;
-    /*box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);*/
-}
-.contactsTable {
-    opacity: .9;
-    font-size: 1.2em;
 }
 
 
-
-.bigToeLogoLink {
-  /*opacity: .7;*/
-  width: 180px;
-  height: 150px;
-  position: fixed;
-  z-index: 1;
-  left: 10px;
+ .bigToeLogoLink {
+  width: 2em;
+  height: 2em;
 }
 
 .paulsFontAwesome !important{
   font-size:48px;
-  color: white;
+  color: white !important;
   opacity: .9;
 }
-}
-.requestsInputTable {
-  opacity: .7;
-  box-shadow: 10px 10px 10px 10px rgba(0,0, 0, 0.8);
-}
+
 .requestInput {
-    font-size: 1.6em;
+    font-size: 1.4em;
       opacity: .9;
-    /*padding: 0px !important;*/
 }
 .requestButton {
   opacity: .7;
-  font-size: 2em;
+  font-size: 1.5em;
   border-radius: none;
 }
 
 .requestsTableHead {
   color: #F08080;
 }
-.requestsTableRows{
+/*.requestsTableRows{
   margin: 0px;
   padding: 0px;
   text-align: left;
-}
-.requestedSongsTable {
+}*/
+/*.requestedSongsTable {
     opacity: .7;
     font-size: 1.6em;
     box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);
-}
+}*/
 
 .loginButton {
   opacity: .7 !important;
@@ -106,25 +71,8 @@ body {
   text-align: right;
   margin: 0px;
   padding: 0px;
-  box-shadow: 15px 15px 20px rgba(0,0, 0, 0.8);
+  /*box-shadow: 15px 15px 20px rgba(0,0, 0, 0.8);*/
 }
-
-
-
-
-.paulsRow {
-  margin: -300 !important;
-  padding: -100 !important;
-}
-/*.paulsTableRow {
-  color: #000000 !important;
-}*/
-/*.table-bordered>tbody>tr>td:nth-child(1), .table-bordered>thead>tr>th:nth-child(1) {
-  width: 100px;
-  background-color: yellow;
-  font-size: 12px;
-}*/
-
 
 audio:hover, audio:focus, audio:active  {
 -webkit-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
@@ -159,6 +107,7 @@ border-radius:7px 7px 7px 7px ;
     left: 0;
     overflow: hidden;
     z-index: -100;
+    background: black;
 }
 
 .fullscreen-bg__video {
@@ -171,13 +120,4 @@ border-radius:7px 7px 7px 7px ;
 
 .borderRadius {
   border-radius: .6em !important;
-}
-
-
-/*.currentNav {
-  color: red !important;
-}*/
-.navContainer {
-  /*background-color: white;
-  opacity: .8;*/
 }

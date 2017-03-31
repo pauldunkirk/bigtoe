@@ -6,26 +6,26 @@
 </div>
 
 <!-- BigToe website link -->
-<div class="">
+<!-- <div class="">
   <a href="http://www.bigtoeandthejam.com" target="_blank"><img alt="Big Toe and the Jam logo" src="css/BTJ_2015_01.svg" class="bigToeLogoLink"></a>
-</div>
+</div> -->
 <!-- <i class="fa fa-facebook-official paulsFontAwesome bigToeLogoLink" style="font-size:48px;"></i> -->
 
 <!-- Requests Table -->
-<div class="requestsInputTable">
+<div class="col-xs-12">
     <input ng-model="login.newSong.song" placeholder="Song" class="requestInput text-center">
     <input ng-model="login.newSong.artist" placeholder="Artist" class="requestInput text-center">
     <input ng-model="login.newSong.requester" placeholder="Your Name" class="requestInput text-center">
 </div>
-    <div class="">
+    <div class="col-xs-12">
         <button ng-click="login.addSong()" type="button" class="btn btn-primary btn-lg requestButton">Request a Song!</button>
         <div class="animated infinite bounce">
-          <i class="fa fa-arrow-up paulsFontAwesome" style="font-size:48px;"></i>
+          <i class="fa fa-arrow-up paulsFontAwesome" style="font-size:50px;"></i>
         </div>
     </div>
 
-    <div class="container paulsContainer">
-        <table class="table table-condensed table-sm paulsTable requestedSongsTable borderRadius">
+    <div class="col-xs-12">
+        <table class="table table-condensed table-sm paulsTable borderRadius">
             <thead class="requestsTableHead">
                 <tr class="requestsTableRows">
                     <td>Song</td>
