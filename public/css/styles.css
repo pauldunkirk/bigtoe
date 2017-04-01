@@ -9,6 +9,10 @@ body {
     /*padding: 10px;*/
     font-family: 'actor';
 }
+.nav{
+  font-size: 1.3em;
+}
+
 
 .container {
     /*width: 60%;*/
@@ -33,6 +37,7 @@ body {
  .bigToeLogoLink {
   width: 2em;
   height: 2em;
+  /*background-position: left;*/
 }
 
 .paulsFontAwesome !important{
