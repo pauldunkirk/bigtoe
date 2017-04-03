@@ -59,24 +59,14 @@ body {
 .requestsTableHead {
   color: #F08080;
 }
-/*.requestsTableRows{
-  margin: 0px;
-  padding: 0px;
-  text-align: left;
-}*/
-/*.requestedSongsTable {
-    opacity: .7;
-    font-size: 1.6em;
-    box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);
-}*/
+
 
 .loginButton {
-  opacity: .7 !important;
+  /*opacity: .7;  DO NOT USE OPACITY HERE!!! IT BLOCKS THE WHOLE PAGE ON CHROME AND ANDROID - WOW!*/
   font-size: 1.1em;
   text-align: right;
   margin: 0px;
   padding: 0px;
-  /*box-shadow: 15px 15px 20px rgba(0,0, 0, 0.8);*/
 }
 
 audio:hover, audio:focus, audio:active  {
