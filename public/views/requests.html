@@ -1,13 +1,13 @@
 <nav ng-include="'views/templates/nav.html'"></nav>
 
 
-<div class="requestsInputTable">
-    <input ng-model="login.newSong.song" placeholder="Song" class="requestInput text-center">
-    <input ng-model="login.newSong.artist" placeholder="Artist" class="requestInput text-center">
-    <input ng-model="login.newSong.requester" placeholder="Your Name" class="requestInput text-center">
+<div class="col-xs-12">
+    <input ng-model="requests.newSong.song" placeholder="Song" class="requestInput text-center">
+    <input ng-model="requests.newSong.artist" placeholder="Artist" class="requestInput text-center">
+    <input ng-model="requests.newSong.requester" placeholder="Your Name" class="requestInput text-center">
 </div>
     <div class="">
-        <button ng-click="login.addSong()" type="button" class="btn btn-primary btn-lg requestButton">Request a Song!</button>
+        <button ng-click="requests.addSong()" type="button" class="btn btn-primary btn-lg requestButton">Request a Song!</button>
         <div class="animated infinite bounce">
           <i class="fa fa-arrow-up paulsFontAwesome" style="font-size:48px;"></i>
         </div>
@@ -23,11 +23,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="requestsTableRows" ng-repeat="song in login.songsList.list">
+                <tr class="requestsTableRows" ng-repeat="song in requests.songsList.list">
                     <td>{{song.song}}</td>
                     <td>{{song.artist}}</td><br>
                     <td>{{song.requester}}</td>
-                    <td><button ng-if="login.someUser.canDeleteRequests" ng-click="login.deleteSong(song.id)" type="button" class="btn btn-primary btn-lg">Delete</button></td>
+                    <td><button ng-if="requests.someUser.canDeleteRequests" ng-click="requests.deleteSong(song.id)" type="button" class="btn btn-primary btn-lg">Delete</button></td>
 
                 </tr>
             </tbody>

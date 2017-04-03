@@ -45,7 +45,7 @@ myApp.run(function(editableOptions) {
         }).when ('/requests', {
             templateUrl: '/views/requests.html',
             controller: 'LoginController',
-            controllerAs: 'login'
+            controllerAs: 'requests'
         }).otherwise ({
             redirectTo: '/login'
         });

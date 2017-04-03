@@ -51,32 +51,10 @@
           });
       };
 
-  // }]); //end controller
-
-
-
   ///Ed
-
-  // myApp.controller('LoginController', ['GigsFactory', function(GigsFactory) {
-  //   var self = this;
-    // console.log('nav controller running');
-    // self.testMessage = 'Hello World, this is the login controller test message';
-
     self.isCollapsed = true;
-
-
     self.toggleNav = function(){
       self.isCollapsed = !self.isCollapsed;
       console.log('toggleNav function, self.isCollapsed', self.isCollapsed);
     };
-
-    // self.toggleDropdown = function(){
-    //   self.isOpen = !self.isOpen;
-    //   console.log('toggleDropdown function');
-    // };
-
-    // self.logOut = function() {
-    //   AuthUserFactory.logOut();
-    // };
-
   }]); // end controller code block
