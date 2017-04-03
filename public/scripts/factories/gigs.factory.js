@@ -94,7 +94,12 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
       allGigs.list = response.data;
       // goToGigs();
     }).catch(function(error) {
-      swal("Sorry, this part of the app is meant for members of Big Toe and the Jam. Please click on the link to our website above. If you are a band member, sorry, your email isn't registered. Send it to me and I'll get you in the system.");
+
+ // the timer on this swal not working - so shortened message
+      swal({
+       title: 'Band only. Sorry dude.',
+       timer: 8000
+     });
       console.log('error authenticating', error);
       auth.$signOut().then(function() {
       console.log('Logging the user out!');
