@@ -23,8 +23,8 @@ myApp.factory('ChartsFactory', ['$http', '$firebaseAuth', '$location', function(
                 id_token: idToken
             }
         }).then(function(response) {
-            console.log('response from factory: ', response);
-            console.log('response.data from factory: ', response.data);
+            // console.log('response from factory: ', response);
+            // console.log('response.data from factory: ', response.data);
             allCharts.list = response.data;
         });
     }

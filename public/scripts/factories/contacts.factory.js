@@ -1,5 +1,5 @@
 myApp.factory('ContactsFactory', ['$http', '$firebaseAuth', '$location', function($http, $firebaseAuth, $location) {
-    console.log('Contacts Factory running');
+    // console.log('Contacts Factory running');
 
     var allContacts = { list: [] };
 
@@ -23,8 +23,8 @@ myApp.factory('ContactsFactory', ['$http', '$firebaseAuth', '$location', functio
                 id_token: idToken
             }
         }).then(function(response) {
-            console.log('response from factory: ', response);
-            console.log('response.data from factory: ', response.data);
+            // console.log('response from factory: ', response);
+            // console.log('response.data from factory: ', response.data);
             allContacts.list = response.data;
         });
     }

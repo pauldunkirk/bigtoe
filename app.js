@@ -21,15 +21,16 @@ app.listen(portDecision, function(){
   // findEmptySendEmail();
 });
 
+//not secure : anyone can request a song
 var requestsroutes = require('./server/routes/requestsroutes.js');
 app.use('/requestsroutes', requestsroutes);
 
 
-// above not secure happens before token - next 2 lines require token
+// above not secure happens before token - next 2 lines bring in token
 var decoder = require('./server/modules/decoder');
 app.use(decoder.token);
 
-// below app.use are secure, only if decoder token
+// below app.use(decoder.token) are secure, accessible only if decoder token
 var gigsroutes = require('./server/routes/gigsroutes.js');
 app.use('/gigsroutes',gigsroutes);
 var mp3sroutes = require('./server/routes/mp3sroutes.js');

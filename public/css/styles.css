@@ -9,20 +9,10 @@ body {
     /*padding: 10px;*/
     font-family: 'actor';
 }
+/*without this, nav font too small*/
 .nav{
   font-size: 1.3em;
 }
-
-
-.container {
-    /*width: 60%;*/
-    /*background-size: 60%;*/
-    /*background-position: center;*/
-    /*text-align: center !important;*/
-    /*box-shadow: 25px 25px 25px 25px rgba(0,0, 0, 0.8);*/
-    /*box-shadow: 5px 5px 30px rgba(0,0, 0, 0.8);*/
-}
-
 
 .table {
   background-color: #F8F8F8;
@@ -33,36 +23,36 @@ body {
       /*box-shadow: 5px 5px 20px rgba(0,0, 0, 0.8);*/
 }
 
-
+/*without this, logo too big*/
  .bigToeLogoLink {
   width: 2em;
   height: 2em;
-  /*background-position: left;*/
 }
 
-.paulsFontAwesome !important{
-  font-size:48px;
-  color: white !important;
+.fa{
+  /*font-size has to be in html (48 for for login button) 50 for request arrow)*/
+  color: white;
   opacity: .9;
 }
 
 .requestInput {
-    font-size: 1.4em;
-      opacity: .9;
+  font-size: 1.4em;
+  opacity: .9;
+  border-radius: .3em;
 }
 .requestButton {
-  opacity: .7;
   font-size: 1.5em;
-  border-radius: none;
+  opacity: .7;
 }
 
+/*#F08080 is pink*/
 .requestsTableHead {
   color: #F08080;
 }
 
 
 .loginButton {
-  /*opacity: .7;  DO NOT USE OPACITY HERE!!! IT BLOCKS THE WHOLE PAGE ON CHROME AND ANDROID - WOW!*/
+  opacity: .7;
   font-size: 1.1em;
   text-align: right;
   margin: 0px;

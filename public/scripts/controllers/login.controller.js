@@ -51,10 +51,10 @@
           });
       };
 
-  ///Ed
+
     self.isCollapsed = true;
     self.toggleNav = function(){
       self.isCollapsed = !self.isCollapsed;
-      console.log('toggleNav function, self.isCollapsed', self.isCollapsed);
+      // console.log('toggleNav function, self.isCollapsed', self.isCollapsed);
     };
   }]); // end controller code block

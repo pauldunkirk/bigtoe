@@ -53,8 +53,8 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
           id_token: idToken
         }
       }).then(function(response) {
-        console.log('response from factory: ', response);
-        console.log('response.data from factory: ', response.data);
+        // console.log('response from factory: ', response);
+        // console.log('response.data from factory: ', response.data);
         allGigs.list = response.data;
         getGigs(idToken);
       });
@@ -66,10 +66,10 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
 
   var auth = $firebaseAuth();
   auth.$onAuthStateChanged(function(firebaseUser) { // This code runs whenever the user changes authentication states e.g. whevenever the user logs in or logs out
-    console.log('gigs factory auth state changed');
+    // console.log('gigs factory auth state changed');
     if (firebaseUser) { // firebaseUser will be null if not logged in
       someUser.canDeleteRequests = true;
-      console.log('someUser',someUser);
+      // console.log('someUser',someUser);
       firebaseUser.getToken().then(function(idToken) { // This is where we make our call to our server
         getGigs(idToken);
       });
@@ -89,8 +89,8 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
         id_token: idToken
       }
     }).then(function(response) {
-      // console.log('response from factory: ', response);
-      // console.log('response.data from factory: ', response.data);
+      console.log('response from factory: ', response);
+      console.log('response.data from factory: ', response.data);
       allGigs.list = response.data;
       // goToGigs();
     }).catch(function(error) {
@@ -98,7 +98,7 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
  // the timer on this swal not working - so shortened message
       swal({
        title: 'Band only. Sorry dude.',
-       timer: 8000
+       timer: 4000
      });
       console.log('error authenticating', error);
       auth.$signOut().then(function() {
@@ -111,11 +111,9 @@ myApp.factory('GigsFactory', ['$http', '$firebaseAuth', '$location', function($h
     $location.path('/login');
   }
 
-  // function goToGigs() {
-  //   $location.path('/gigs');
-  // }
 
-console.log(someUser);
+
+// console.log(someUser);
 
   return {
     allGigs: allGigs,
