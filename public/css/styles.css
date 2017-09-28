@@ -30,7 +30,7 @@ body {
 }
 
 .fa{
-  /*font-size has to be in html (48 for for login button) 50 for request arrow)*/
+  /*font-size has to be in html (48 for for login button, 50 for request arrow)*/
   color: white;
   opacity: .9;
 }

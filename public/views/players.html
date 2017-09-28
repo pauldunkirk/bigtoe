@@ -5,7 +5,7 @@
 </div>
 
 <div class="container paulsContainer">
-    <table class="table paulsTable playersTable borderRadius">
+    <table class="table playersTable borderRadius">
         <thead>
             <tr>
                 <th class="text-center">Gig</th>
@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="paulsTableRow" ng-repeat="p in players.gigsList.list">
+            <tr ng-repeat="p in players.gigsList.list">
                 <td editable-text="p.gig" onaftersave="players.updateGigs(p)">{{p.gig || "empty"}}</td>
                 <td>{{p.date | date:'MM/dd/yyyy'}}</td>
                 <td editable-text="p.guitar" onaftersave="players.updateGigs(p)">{{p.guitar || "empty"}}</td>

@@ -1,10 +1,6 @@
 var router = require('express').Router();
 var pg = require('pg');
-
-
 var connectionString = require('../modules/database-config');
-
-
 
 router.get('/get/mp3s', function(req, res) {
     console.log('hit my get mp3s route');

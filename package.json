@@ -1,7 +1,7 @@
 {
-  "name": "new-angular-project",
+  "name": "big_toe_and_the_jam_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "band_management_app",
   "main": "index.js",
   "dependencies": {
     "angular": "^1.6.3",
@@ -25,9 +25,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nodemon app.js",
     "start": "node app.js"
   },
-  "author": "",
+  "author": "Paul Dunkirk",
   "license": "ISC"
 }

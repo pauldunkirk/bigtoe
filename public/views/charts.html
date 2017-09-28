@@ -2,10 +2,10 @@
     <nav ng-include="'views/templates/nav.html'"></nav>
 
 
-    <div class="container paulsContainer">
-        <table class="table paulsTable chartsTable borderRadius">
+    <div class="container">
+        <table class="table chartsTable borderRadius">
             <tbody>
-                <tr class="paulsRow" ng-repeat="ch in charts.chartsList.list">
+                <tr ng-repeat="ch in charts.chartsList.list">
                     <td><a ng-href="{{ch.url}}" target="_blank">{{ch.name}}</a></td>
                 </tr>
             </tbody>

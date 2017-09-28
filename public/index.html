@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/vendor/bootstrap.min.css" />
     <!-- <link href='//fonts.googleapis.com/css?family=Sofia' rel='stylesheet'> -->
     <link href='//fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
-    <link rel="stylesheet" href="/css/animate.css"/>
+    <link rel="stylesheet" href="/vendor/animate.css"/>
     <link rel="stylesheet" href="/css/styles.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/vendor/sweetalert.css">
@@ -19,6 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
     <script type="text/javascript" src="/vendor/ui-bootstrap-tpls-2.5.0.min.js"></script>
 
+    <!-- ANGULAR ROUTE -->
     <script type="text/javascript" src="/vendor/angular-route.min.js"></script>
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
@@ -27,13 +28,17 @@
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
     <!-- Firebase Config -->
     <script src="scripts/config.js"></script>
+    <!-- X-EDITABLE -->
     <script type="text/javascript" src="/vendor/xeditable.js"></script>
+
+    <!-- CLIENT -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <!-- FACTORIES -->
     <script type="text/javascript" src="/scripts/factories/gigs.factory.js"></script>
     <script type="text/javascript" src="/scripts/factories/mp3s.factory.js"></script>
     <script type="text/javascript" src="/scripts/factories/charts.factory.js"></script>
     <script type="text/javascript" src="/scripts/factories/contacts.factory.js"></script>
-
+    <!-- CONTROLLERS -->
     <script type="text/javascript" src="/scripts/controllers/login.controller.js"></script>
     <script type="text/javascript" src="/scripts/controllers/gigs.controller.js"></script>
     <script type="text/javascript" src="/scripts/controllers/charts.controller.js"></script>
@@ -43,7 +48,11 @@
     <script type="text/javascript" src="/scripts/controllers/video.controller.js"></script>
 </head>
 
+
+
 <body ng-app="myApp">
+
+
     <div>
         <main ng-view></main>
     </div>

@@ -1,6 +1,5 @@
 var router = require('express').Router();
 var pg = require('pg');
-
 var connectionString = require('../modules/database-config');
 
 router.get('/get/gigs', function(req, res) {

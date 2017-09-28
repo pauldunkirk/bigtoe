@@ -1,15 +1,16 @@
 <nav ng-controller="LoginController as login" class="navbar navbar-toggleable-xs navbar-inverse static-top">
 
 <div class="navbar-header">
+
   <a class="navbar-brand" href="http://www.bigtoeandthejam.com" target="_blank"><img alt="Big Toe and the Jam logo" src="css/BTJ_2015_01.svg" class="bigToeLogoLink"></a>
 
-  <button type="button" class="navbar-toggle navbar-toggle-right" ng-click="login.toggleNav()">
+  <button type="button" class="navbar-toggle" ng-click="login.toggleNav()">
     <span class="sr-only">Toggle Navigation</span>
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
-
   </button>
+
 </div>
 
   <ul class="nav navbar-nav navbar-right list-unstyled navbar-collapse" uib-collapse="login.isCollapsed">
@@ -23,4 +24,5 @@
     <li class="nav-item"><a class="nav-link" href="#!video">Video</a></li>
     <button type="button" class="btn btn-sm btn-danger navbar-btn" ng-click="login.logOut()">Log Out</button>
   </ul>
+  
 </nav>

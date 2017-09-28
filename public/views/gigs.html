@@ -2,8 +2,8 @@
     <nav ng-include="'views/templates/nav.html'"></nav>
 </div>
 
-<div class="container paulsContainer">
-    <table class="table table-hover table-sm paulsTable gigsTable borderRadius">
+<div class="container">
+    <table class="table table-hover table-sm gigsTable borderRadius">
         <thead class="text-center">
             <tr class="text-center">
                 <th class="text-center">Gig</th>
@@ -13,7 +13,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="paulsRow" ng-repeat="g in gigs.gigsList.list">
+            <tr ng-repeat="g in gigs.gigsList.list">
                 <td><a ng-href="{{g.website}}" target="_blank">{{g.gig}}</a></td>
                 <td><a ng-href="http://maps.google.com/?q={{g.address}}" ng-href="{{g.website}}" target="_blank">map</a></td>
                 <td>{{g.date | date:'MM/dd/yyyy'}}</td>

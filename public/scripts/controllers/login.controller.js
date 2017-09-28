@@ -4,9 +4,9 @@
       var self = this;
 
       self.songsList = GigsFactory.allSongs;
-      self.getSongs=GigsFactory.getSongs;
+      self.getSongs = GigsFactory.getSongs;
 
-      self.someUser=GigsFactory.someUser;
+      self.someUser = GigsFactory.someUser;
       // console.log(GigsFactory);
 // console.log(GigsFactory.canDeleteRequests);
 // console.log(self.canDeleteRequests);
